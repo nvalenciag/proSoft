@@ -7,7 +7,7 @@ session_start();
 
 
 
-$conexion=mysqli_connect("localhost","root","","reparatodo");
+$conexion=mysqli_connect("localhost","root","root","reparatodo");
 
 $consulta="SELECT*FROM adm where nam='$nam' and email='$email'  ";
 $resultado=mysqli_query($conexion,$consulta);
