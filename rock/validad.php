@@ -9,7 +9,7 @@ session_start();
 
 $conexion=mysqli_connect("localhost","root","root","reparatodo");
 
-$consulta="SELECT*FROM adm where nam='$nam' and email='$email'  ";
+$consulta="SELECT*FROM reparador where usuario='$nam' and contrasena='$email'  ";
 $resultado=mysqli_query($conexion,$consulta);
 
 

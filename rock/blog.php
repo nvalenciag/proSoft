@@ -143,11 +143,13 @@
                     
                 </div>
                 <br>
-                <br>              
+                <br>
+                <form action="validarPedido.php" method="post">              
                 <div class="col-sm-12">
                     <input class="contactus" placeholder="Codigo del pedido" type="text"name="codigoPedido">
                     <button class="send">Aprobar</button>
                 </div>
+                </form>
             </div>
 
             <div class="copyright">
