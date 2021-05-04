@@ -148,6 +148,8 @@
                 <div class="col-sm-12">
                     <input class="contactus" placeholder="Codigo del pedido" type="text"name="codigoPedido">
                     <button class="send">Aprobar</button>
+                    <button class="send">Rechazar</button>
+
                 </div>
                 </form>
             </div>
