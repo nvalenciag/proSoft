@@ -12,14 +12,14 @@ $descripcionArreglo =$_POST['descripcionArreglo'];
 
 
 
-$conexion=mysqli_connect("localhost","root","","reparatodo");
+$conexion=mysqli_connect("localhost","root","root","reparatodo");
 
 
 
 
 
   
-$sql= "INSERT INTO pedido (nombre_apellido ,telefono,email ,descripcion ,nombre_producto ,descripcion_producto ) VALUES ('$nombreCliente','$telefonoCliente','$emailCliente','$nombreProducto','$descripcionProducto','$descripcionArreglo')";   
+$sql= "INSERT INTO pedido (nombre_apellido ,telefono,email ,descripcion ,nombre_producto ,descripcion_producto,estado ) VALUES ('$nombreCliente','$telefonoCliente','$emailCliente','$nombreProducto','$descripcionProducto','$descripcionArreglo','espera')";   
 
 
 if ($link-> query($sql) === TRUE) {

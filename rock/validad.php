@@ -17,7 +17,7 @@ $filas=mysqli_num_rows($resultado);
 
 if($filas){
   print "$filas";
-    header("location:blog.html");
+    header("location:blog.php");
 
 }else{
     ?>
