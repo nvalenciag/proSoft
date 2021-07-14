@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Rock</title>
+    <title>ReparaTodo</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -65,6 +65,7 @@
 
                                       
                                         <li > <a href="blog.html">Revision</a> </li>
+                                        <li > <a href="contact.html">Reparaciones</a> </li>
                                         <li > <a href="index.html">cerrar sesion</a> </li>
                                     </ul>
                                 </nav>
@@ -144,14 +145,17 @@
                 </div>
                 <br>
                 <br>
-                <form action="validarPedido.php" method="post">              
+                <form action="validarPedido.php" method="post" >              
                 <div class="col-sm-12">
                     <input class="contactus" placeholder="Codigo del pedido" type="text"name="codigoPedido">
-                    <button class="send">Aprobar</button>
-                    <button class="send">Rechazar</button>
+                    
+                    <input type="submit" name="boton3" value="Aprobar">
+                    <input type="submit" name="boton2" value="Rechazar">
+                    
 
                 </div>
                 </form>
+                
             </div>
 
             <div class="copyright">
