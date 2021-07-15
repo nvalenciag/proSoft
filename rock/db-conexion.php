@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "aguileracamilo03";
+$password = "root";
 $dbname = "reparatodo";
 $link = mysqli_connect($servername, $username, $password, $dbname);
 if (!$link) {
