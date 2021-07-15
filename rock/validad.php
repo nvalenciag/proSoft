@@ -1,13 +1,18 @@
 <?php
 include('db.php');
+
 $nam=$_POST['nam'];
 $email=$_POST['email'];
+
+session_start();
+$nm=$_SESSION['nombre'];
+$_SESSION['nombre']=$_POST['nam'];
 
 session_start();
 
 
 
-$conexion=mysqli_connect("localhost","root","root","reparatodo");
+$conexion=mysqli_connect("localhost","root","aguileracamilo03","reparatodo");
 
 $consulta="SELECT*FROM reparador where usuario='$nam' and contrasena='$email'  ";
 $resultado=mysqli_query($conexion,$consulta);

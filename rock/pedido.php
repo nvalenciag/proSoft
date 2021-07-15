@@ -8,7 +8,7 @@ $libro=$_POST['libro'];
 echo $libro;
 
 
-$conexion=mysqli_connect("localhost","root","root","bibliote");
+$conexion=mysqli_connect("localhost","root","aguileracamilo03","bibliote");
 
 $consulta="SELECT*FROM libro where isbn='$libro'" ;
 $resultado=mysqli_query($conexion,$consulta);

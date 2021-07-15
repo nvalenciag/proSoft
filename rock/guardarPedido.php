@@ -12,7 +12,7 @@ $descripcionArreglo =$_POST['descripcionArreglo'];
 
 
 
-$conexion=mysqli_connect("localhost","root","root","reparatodo");
+$conexion=mysqli_connect("localhost","root","aguileracamilo03","reparatodo");
 
 
 

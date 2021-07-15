@@ -1,6 +1,8 @@
 <?php
 include "db-conex.php";
 
+session_start();
+$nm=$_SESSION['nombre'];
 
 $codigoPedido=$_POST['codigoPedido'];
 $nam=$_POST['nam'];
@@ -8,7 +10,7 @@ $nam=$_POST['nam'];
 
 
 
-$conexion=mysqli_connect("localhost","root","root","reparatodo");
+$conexion=mysqli_connect("localhost","root","aguileracamilo03","reparatodo");
 
 $consulta="SELECT*FROM pedido where codigo='$codigoPedido'" ;
 $resultado=mysqli_query($conexion,$consulta);
@@ -24,8 +26,7 @@ $filas=mysqli_num_rows($resultado);
  if(isset($_POST['boton2'])) $boton2=$_POST['boton2']; 
 
  if($boton3){
-  $fql= "UPDATE pedido SET estado = 'aprovado' WHERE codigo = '$codigoPedido'"; 
-  $sql= "UPDATE pedido SET usuario_Reparador = '$nam' WHERE codigo = '$codigoPedido'"; 
+  $sql= "UPDATE pedido SET estado = 'aprobado',usuario_reparador = '$nm' WHERE codigo = '$codigoPedido'"; 
   
 
  }
