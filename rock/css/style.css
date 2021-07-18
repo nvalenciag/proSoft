@@ -1688,6 +1688,17 @@
      background: #0f69c6;
      padding: 60px 0px;
 }
+.contenedor1 {
+    position: relative;
+  }
+  
+.hijo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
  .contact .titlepage {
      text-align: center;
 }

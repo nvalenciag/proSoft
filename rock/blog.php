@@ -146,17 +146,23 @@
                 </div>
                 <br>
                 <br>
+                <footr>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 width">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 width">
                 <form action="validarPedido.php" method="post" >              
-                <div class="col-sm-12">
-                    <input class="contactus" placeholder="Codigo del pedido" type="text"name="codigoPedido">
-                    
+                    <input type="text" placeholder="Codigo del pedido" type="text"name="codigoPedido">
+                    <br><br>
                     <input type="submit" name="boton3" value="Aprobar">
                     <input type="submit" name="boton2" value="Rechazar">
-                    
-
-                </div>
                 </form>
-                
+                </div>
+                </div>
+                </div>
+                </div>   
             </div>
 
             <div class="copyright">
