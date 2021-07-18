@@ -22,12 +22,12 @@ $filas=mysqli_num_rows($resultado);
 
 if($filas){
   print "$filas";
-    header("location:blog.php");
+    header("location:revision.php");
 
 }else{
     ?>
     <?php
-    include("index.html");
+    include("pedidos.html");
 
   ?>
   <h1 class="bad">ERROR DE AUTENTIFICACION</h1>

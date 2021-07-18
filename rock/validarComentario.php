@@ -39,7 +39,7 @@ if($filas){
        mysqli_close($link);
 
     if($cont==1){
-        header("location:contact.php"); 
+        header("location:reparaciones.php"); 
     }
    $cont++;
 

@@ -64,9 +64,9 @@
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
                                      
-                                        <li> <a href="blog.php">Revision</a> </li>
-                                        <li> <a href="contact.php">Reparaciones</a> </li>   
-                                        <li> <a href="index.html">Cerrar Sesion</a> </li>
+                                        <li> <a href="revision.php">Revision</a> </li>
+                                        <li> <a href="reparaciones.php">Reparaciones</a> </li>   
+                                        <li> <a href="pedidos.html">Cerrar Sesion</a> </li>
                                   
                                     </ul>
                                 </nav>
@@ -118,7 +118,7 @@
                                             
                                             $nm=$_SESSION['nombre'];
 
-                                            $sql = "SELECT * FROM pedido where usuario_reparador='$nm'";
+                                            $sql = "SELECT * FROM pedido where usuario_reparador='$nm' and estado!='finalizado'";
                                             $resultado = mysqli_query($conexion, $sql);
 
                                         while($mostrar=mysqli_fetch_array($resultado)){

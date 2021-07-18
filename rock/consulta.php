@@ -64,7 +64,7 @@
                                     <ul class="menu-area-main">
 
                                       
-                                        <li > <a href="index.html">Volver</a> </li>
+                                        <li > <a href="pedidos.html">Volver</a> </li>
                                     </ul>
                                 </nav>
                             </div>

@@ -27,7 +27,7 @@ if($filas){
        mysqli_close($link);
 
     
-    header("location:blog.php"); 
+    header("location:revision.php"); 
 
 }else{
     ?>

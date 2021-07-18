@@ -25,7 +25,7 @@ $sql= "INSERT INTO pedido (nombre_apellido ,telefono,email ,descripcion ,nombre_
 if ($link-> query($sql) === TRUE) {
 
     echo "OK";      
-    header("location:index.html"); 
+    header("location:pedidos.html"); 
 
 }else {
     echo "ERROR";

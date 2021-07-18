@@ -65,9 +65,9 @@
                                     <ul class="menu-area-main">
 
                                       
-                                        <li > <a href="blog.php">Revision</a> </li>
-                                        <li > <a href="contact.php">Reparaciones</a> </li>
-                                        <li > <a href="index.html">cerrar sesion</a> </li>
+                                        <li > <a href="revision.php">Revision</a> </li>
+                                        <li > <a href="reparaciones.php">Reparaciones</a> </li>
+                                        <li > <a href="pedidos.html">cerrar sesion</a> </li>
                                     </ul>
                                 </nav>
                             </div>
