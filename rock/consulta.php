@@ -1,6 +1,10 @@
 <?php
-    session_start();
     $conexion = mysqli_connect("localhost", "root", "root", "reparatodo")
+
+ //   $codigo="hola";
+    
+
+ //   echo "<p>hola</p>";
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Reparatodo</title>
+    <title>Consulta</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -37,7 +41,7 @@
 </head>
 <!-- body -->
 
-<body class="main-layout contact-page">
+<body class="main-layout">
     <!-- loader  -->
     <div class="loader_bg">
         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
@@ -63,35 +67,26 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
-                                     
-                                        <li> <a href="blog.php">Revision</a> </li>
-                                        <li> <a href="contact.php">Reparaciones</a> </li>   
-                                        <li> <a href="index.html">Cerrar Sesion</a> </li>
-                                  
+
+                                      
+                                        <li > <a href="blog.html">Revision</a> </li>
+                                        <li > <a href="index.html">cerrar sesion</a> </li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-                        <form class="search">
-                            <input class="form-control" type="text" placeholder="Search">
-                            <button><img src="images/search_icon.png"></button>
-                        </form>
-                    </div>
                 </div>
             </div>
-        
             <!-- end header inner -->
     </header>
     <!-- end header -->
-
     <div class="blogbg">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="blogtitlepage">
-                        <h2>Reparaciones</h2>
+                        <h2>Reparatodo</h2>
                     </div>
                 </div>
             </div>
@@ -102,9 +97,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-12 width">                       
-                    </div>
+                </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
+                            <h3>Pedido</h3>
                             <form>
                                 <div class="row">
                                     <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
@@ -119,12 +115,8 @@
                                         </tr>
                                         
                                         <?php
-                                            include "db-conex.php";
-
-                                            
-                                            $nm=$_SESSION['nombre'];
-
-                                            $sql = "SELECT * FROM pedido where usuario_reparador='$nm'";
+                                            $codigoCliente=$_POST['codigoPedido'];
+                                            $sql = "SELECT * FROM pedido where codigo='$codigoCliente'";
                                             $resultado = mysqli_query($conexion, $sql);
 
                                         while($mostrar=mysqli_fetch_array($resultado)){
@@ -142,7 +134,7 @@
                                         }
                                         ?>
                                     </table>
-                                </div>                                
+                                </div>                              
                             </form>
                         </div>
                     </div>
@@ -150,17 +142,15 @@
                 </div>
                 <br>
                 <br>
-                <form action="validarPedido.php" method="post">                             
+                <form action="validarPedido.php" method="post">              
+                
                 </form>
-            </div>
+                </div>
             <div class="copyright">
                 <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
             </div>
         </div>
     </footr>
-    <!--  footer -->
-
-
     <!-- end footer -->
     <!-- Javascript files-->
     <script src="js/jquery.min.js"></script>

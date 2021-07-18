@@ -1794,7 +1794,7 @@
      height: 32px;
 }
  .copyright {
-     background-color: #fff;
+     background-color: rgb(2, 2, 2);
      padding: 20px 0px;
      margin-top: 90px;
 }
@@ -1860,7 +1860,7 @@
      text-align: center;
 }
  .blogbg {
-     background-color: #ff1d00;
+     background-color: #000000;
 }
  .blogbg .blogtitlepage h2 {
      color: #fff;
