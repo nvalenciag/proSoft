@@ -7,7 +7,7 @@ $codigoPedido=$_POST['codigoPedido'];
 
 
 
-$conexion=mysqli_connect("localhost","root","root","reparatodo");
+$conexion=mysqli_connect("localhost","root","aguileracamilo03","reparatodo");
 
 $consulta="SELECT*FROM pedido where codigo='$codigoPedido'" ;
 $resultado=mysqli_query($conexion,$consulta);

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $conexion = mysqli_connect("localhost", "root", "root", "reparatodo")
+    $conexion = mysqli_connect("localhost", "root", "aguileracamilo03", "reparatodo")
 ?>
 
 <!DOCTYPE html>
@@ -85,15 +85,15 @@
     </header>
     <!-- end header -->
 
-    <div class="contactbg">
-    <div class="container">
+    <div class="blogbg">
+  
             <div class="row">
                 <div class="col-md-10">
-                    <div class="contacttitlepage">
+                    <div class="blogtitlepage">
                         <h2>Reparaciones</h2>
                     </div>
                 </div>
-            </div>
+    
     </div>
     
     <div class="footer">
@@ -159,8 +159,22 @@
              </div>
          
         </form>
-    
+
+    <form action="validarFinalizar.php" method="post" >
+                  
+            <div class="col-sm-12">
+            <input class="contactus" placeholder="codigo" type="text"name="codigofin">
+             <input class="contactus" placeholder="Valor a pagar" type="text"name="montofin">
+                    
+              <input type="submit" name="boton8" value="Finalizar">
+                 
+                    
+
+             </div>
+         
+        </form>
 </div>
+
     <!--  footer -->
 
     <div class="copyright">

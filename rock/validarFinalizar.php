@@ -1,14 +1,14 @@
 <?php
 $cont=0;
-$codigoh=$_POST['codigoh'];
-$comentario=$_POST['comentario'];
+$codigofin=$_POST['codigofin'];
+$montofin=$_POST['montofin'];
 while($cont<2){
 include "db-conex.php";
 
 
 $conexion=mysqli_connect("localhost","root","aguileracamilo03","reparatodo");
 
-$consulta="SELECT*FROM pedido where codigo='$codigoh'" ;
+$consulta="SELECT*FROM pedido where codigo='$codigofin'" ;
 $resultado=mysqli_query($conexion,$consulta);
 $numero = 3;
 
@@ -17,11 +17,11 @@ $filas=mysqli_num_rows($resultado);
 
  
 if( $cont==0){
- $sql= "UPDATE pedido SET estado = 'Reparacion' WHERE codigo = '$codigoh'";  
+ $sql= "UPDATE pedido SET estado = 'Finalizado' WHERE codigo = '$codigofin'";  
 }
 else{
     
-    $sql= "INSERT INTO observaciones (comentario ,codigo_pedido ) VALUES ('$comentario','$codigoh')"; 
+    $sql= "UPDATE pedido SET valorReparacion = '$montofin' WHERE codigo = '$codigofin'";  
 }
  
   
@@ -41,6 +41,8 @@ if($filas){
     if($cont==1){
         header("location:contact.php"); 
     }
+    
+    
    $cont++;
 
 }else{
