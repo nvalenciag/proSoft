@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $conexion = mysqli_connect("localhost", "root", "aguileracamilo03", "reparatodo")
+    $conexion = mysqli_connect("localhost", "root", "root", "reparatodo")
 ?>
 
 <!DOCTYPE html>
@@ -86,16 +86,14 @@
     <!-- end header -->
 
     <div class="blogbg">
-  
+    <div class="container">
             <div class="row">
                 <div class="col-md-10">
                     <div class="blogtitlepage">
                         <h2>Reparaciones</h2>
                     </div>
                 </div>
-    
-    </div>
-    
+    </div> 
     <div class="footer">
     <div class="container">
         <div class="row">
