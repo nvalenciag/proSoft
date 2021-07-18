@@ -81,32 +81,28 @@
                     </div>
                 </div>
             </div>
-        
             <!-- end header inner -->
     </header>
     <!-- end header -->
 
-    <div class="blogbg">
-        <div class="container">
+    <div class="contactbg">
+    <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="blogtitlepage">
+                <div class="col-md-10">
+                    <div class="contacttitlepage">
                         <h2>Reparaciones</h2>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
-    <footr>
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 width">                       
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 width">
-                        <div class="address">
-                            <form>
-                                <div class="row">
+    
+    <div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-7 offset-md-3">
+                <div class="address">
+                    <form>
+                        <div class="row">
                                     <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
                                         <tr bgcolor= "#FF2D00">
                                             <td><font size ="3", color ="#000000">codigo</font></td>
@@ -116,8 +112,8 @@
                                             <td><font size ="3", color ="#000000">producto</font></td>
                                             <td><font size ="3", color ="#000000">descripcion del producto</font></td>
                                             <td><font size ="3", color ="#000000">estado</font></td>
+                                            <td><font size ="3", color ="#000000">    Observaciones   </font></td>
                                         </tr>
-                                        
                                         <?php
                                             include "db-conex.php";
 
@@ -137,29 +133,41 @@
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['descripcion'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_producto'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['estado'] ?></font></td>
+                                            
                                         </tr>
                                         <?php 
                                         }
                                         ?>
                                     </table>
-                                </div>                                
-                            </form>
+                                    
                         </div>
-                    </div>
-                    
+                    </form>                 
                 </div>
-                <br>
-                <br>
-                <form action="validarPedido.php" method="post">                             
-                </form>
-            </div>
-            <div class="copyright">
-                <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
             </div>
         </div>
-    </footr>
+    </div>
+         <form action="validarComentario.php" method="post" >
+                  
+            <div class="col-sm-12">
+            <input class="contactus" placeholder="codigo" type="text"name="codigoh">
+             <input class="contactus" placeholder="Comentario" type="text"name="comentario">
+                    
+              <input type="submit" name="boton7" value="Guardar">
+                 
+                    
+
+             </div>
+         
+        </form>
+    
+</div>
     <!--  footer -->
 
+    <div class="copyright">
+        <div class="container">
+            <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+        </div>
+    </div>
 
     <!-- end footer -->
     <!-- Javascript files-->
