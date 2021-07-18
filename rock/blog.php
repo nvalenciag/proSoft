@@ -166,7 +166,7 @@
             </div>
 
             <div class="copyright">
-                <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+                <p>© 2021 Proyecto Software II <a href="https://html.design/"></a></p>
             </div>
         </div>
     </footr>

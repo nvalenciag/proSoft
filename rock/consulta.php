@@ -1,12 +1,7 @@
 <?php
+    session_start();
     $conexion = mysqli_connect("localhost", "root", "root", "reparatodo")
-
- //   $codigo="hola";
-    
-
- //   echo "<p>hola</p>";
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,8 +64,7 @@
                                     <ul class="menu-area-main">
 
                                       
-                                        <li > <a href="blog.html">Revision</a> </li>
-                                        <li > <a href="index.html">cerrar sesion</a> </li>
+                                        <li > <a href="index.html">Volver</a> </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -96,9 +90,9 @@
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 width">                       
+                    <div class="col-lg-3 col-md-7 col-sm-12 width">                       
                 </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 width">
+                    <div class="col-lg-6 col-md-7 col-sm-12 width">
                         <div class="address">
                             <h3>Pedido</h3>
                             <form>
@@ -111,6 +105,7 @@
                                             <td><font size ="3", color ="#000000">email</font></td>
                                             <td><font size ="3", color ="#000000">producto</font></td>
                                             <td><font size ="3", color ="#000000">descripcion del producto</font></td>
+                                             <td><font size ="3", color ="#000000">valor a pagar</font></td>
                                             <td><font size ="3", color ="#000000">estado</font></td>
                                         </tr>
                                         
@@ -123,11 +118,12 @@
                                             ?>
                                         <tr>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['codigo'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_apellido'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['telefono'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['email'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['descripcion'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_producto'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_apellido'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['valorReparacion'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['estado'] ?></font></td>
                                         </tr>
                                         <?php 
@@ -138,8 +134,61 @@
                             </form>
                         </div>
                     </div>
+
                     
                 </div>
+                
+                <br>
+                <br>
+                <form action="validarPedido.php" method="post">              
+                
+                </form>
+                </div>
+            
+        </div>
+    </footr>
+    <footr>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-2 col-sm-12 width">                       
+                </div>
+                    <div class="col-lg-6 col-md-2 col-sm-12 width">
+                        <div class="address">
+                        
+                            <form>
+                                <div class="row">
+                                    <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
+                                        <tr bgcolor= "#FF2D00">
+                                            <td><font size ="3", color ="#000000">codigo</font></td>
+                                            <td><font size ="3", color ="#000000">comentarios</font></td>
+  
+                                        </tr>
+                                        
+                                        <?php
+                                            $codigoCliente=$_POST['codigoPedido'];
+                                            $sql = "SELECT * FROM observaciones where codigo_pedido='$codigoCliente'";
+                                            $resultado = mysqli_query($conexion, $sql);
+
+                                        while($mostrar=mysqli_fetch_array($resultado)){
+                                            ?>
+                                        <tr>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['codigo'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['comentario'] ?></font></td>
+                 
+                                        </tr>
+                                        <?php 
+                                        }
+                                        ?>
+                                    </table>
+                                </div>                              
+                            </form>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
                 <br>
                 <br>
                 <form action="validarPedido.php" method="post">              
@@ -147,7 +196,7 @@
                 </form>
                 </div>
             <div class="copyright">
-                <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+                <p>© 2021 Proyecto Software II <a href="https://html.design/"></a></p>
             </div>
         </div>
     </footr>

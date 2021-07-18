@@ -103,14 +103,14 @@
                         <div class="row">
                                     <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
                                         <tr bgcolor= "#FF2D00">
-                                            <td><font size ="3", color ="#000000">codigo</font></td>
-                                            <td><font size ="3", color ="#000000">nombre</font></td>
-                                            <td><font size ="3", color ="#000000">telefono</font></td>
-                                            <td><font size ="3", color ="#000000">email</font></td>
-                                            <td><font size ="3", color ="#000000">producto</font></td>
-                                            <td><font size ="3", color ="#000000">descripcion del producto</font></td>
-                                            <td><font size ="3", color ="#000000">estado</font></td>
-                                            <td><font size ="3", color ="#000000">    Observaciones   </font></td>
+                                            <td><font size ="2", color ="#000000">codigo</font></td>
+                                            <td><font size ="2", color ="#000000">nombre</font></td>
+                                            <td><font size ="2", color ="#000000">telefono</font></td>
+                                            <td><font size ="2", color ="#000000">email</font></td>
+                                            <td><font size ="2", color ="#000000">producto</font></td>
+                                            <td><font size ="2", color ="#000000">descripcion del producto</font></td>
+                                            <td><font size ="2", color ="#000000">estado</font></td>
+                                            <td><font size ="2", color ="#000000">    Observaciones   </font></td>
                                         </tr>
                                         <?php
                                             include "db-conex.php";
@@ -124,13 +124,13 @@
                                         while($mostrar=mysqli_fetch_array($resultado)){
                                             ?>
                                         <tr>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['codigo'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_apellido'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['telefono'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['email'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['descripcion'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_producto'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['estado'] ?></font></td>
+                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['codigo'] ?></font></td>
+                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['nombre_apellido'] ?></font></td>
+                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['telefono'] ?></font></td>
+                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['email'] ?></font></td>
+                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['descripcion'] ?></font></td>
+                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['nombre_producto'] ?></font></td>
+                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['estado'] ?></font></td>
                                             
                                         </tr>
                                         <?php 
@@ -144,14 +144,24 @@
             </div>
         </div>
     </div>
+    <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 width">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 width">
          <form action="validarComentario.php" method="post" >
-                  
+            <br>
+            <br>
             <div class="col-sm-12">
-            <input class="contactus" placeholder="codigo" type="text"name="codigoh">
-             <input class="contactus" placeholder="Comentario" type="text"name="comentario">
-                    
+            <input type="text" placeholder="codigo" type="text"name="codigoh">
+            <br>
+            <br>
+            <input type="text" placeholder="Comentario" type="text"name="comentario">
+            <br>
+            <br>      
               <input type="submit" name="boton7" value="Guardar">
-                 
+              <br><br>    
                     
 
              </div>
@@ -161,9 +171,12 @@
     <form action="validarFinalizar.php" method="post" >
                   
             <div class="col-sm-12">
-            <input class="contactus" placeholder="codigo" type="text"name="codigofin">
-             <input class="contactus" placeholder="Valor a pagar" type="text"name="montofin">
-                    
+            <input type="text" placeholder="codigo" type="text"name="codigofin">
+            <br>
+            <br>
+            <input type="text" placeholder="Valor a pagar" type="text"name="montofin">
+            <br>  
+            <br>     
               <input type="submit" name="boton8" value="Finalizar">
                  
                     
@@ -171,13 +184,18 @@
              </div>
          
         </form>
+        </div>
+                </div>
+                </div>
+                </div>   
+            </div>
 </div>
 
     <!--  footer -->
 
     <div class="copyright">
         <div class="container">
-            <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+            <p>© 2021 Proyecto Software II <a href="https://html.design/"></a></p>
         </div>
     </div>
 
