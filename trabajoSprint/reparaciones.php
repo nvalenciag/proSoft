@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $conexion=mysqli_connect("localhost","root","root","reparatodo");
+    $conexion=mysqli_connect("localhost","root","aguileracamilo03","reparatodo");
     ?>
 
 <!DOCTYPE html>
