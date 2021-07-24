@@ -59,7 +59,7 @@
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
                                         <li> <a href="revision.php">Menu</a> </li>
-                                        <li> <a href="pagoServicios.html">Pago Servicios publicos</a> </li>
+                                        <li> <a href="pagos.html">Pago Del Soat</a> </li>
                                         <li> <a href="index.html">Cerrar sesion</a> </li>
 
                                     </ul>
@@ -82,18 +82,18 @@
                     
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
-                            <h3>Pago Del Soat</h3>
+                            <h3>Pago De Servicios Publicos</h3>
                             <form action="guardarPedido.php" method="post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Tarjeta de propiedad" type="text" name="tarjetaCliente">
+                                        <input class="contactus" placeholder="Cedula" type="text" name="cedulaCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Soat Vencido" type="text" name="soatCliente">
+                                        <input class="contactus" placeholder="Numero de recibo" type="text" name="reciboCliente">
                                     </div>
                                     
                                     <div class="col-sm-12">
-                                        <button class="send">Generar Valor</button>
+                                        <button class="send">Mostrar</button>
                                         
                                     </div>
                                 </div>
@@ -102,13 +102,24 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
-                            <h3>Valor a pagar</h3>
+                            <h3>Informacion del pago</h3>
                             <form action="guardarPedido.php" method="post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <input class="contactus"  readonly="readonly" placeholder="Valor a pagar" type="text" name="contraseñaCliente">
+                                        <input class="contactus" readonly="readonly" placeholder="Numero de cuenta" type="text" name="reciboCliente">
                                     </div>
-                                    
+                                    <div class="col-sm-12">
+                                        <input class="contactus" readonly="readonly" placeholder="Numero de cedula" type="text" name="cedulaCliente">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" readonly="readonly" placeholder="Fecha maxima a pagar" type="text" name="fechaMCliente">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" readonly="readonly" placeholder="Fecha de corte" type="text" name="fechaCCliente">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" readonly="readonly" placeholder="Valor a pagar" type="text" name="valorPCliente">
+                                    </div>
                                     <div class="col-sm-12">
                                         <button class="send">Pagar</button>
                                         

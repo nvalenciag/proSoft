@@ -68,6 +68,7 @@
                                         <li > <a href="pagos.html">Pagos</a> </li>
                                         <li > <a href="revision.php">Recargas y Datos</a> </li>
                                         <li > <a href="reparaciones.php">Chances</a> </li>
+                                        <li > <a href="ahustesCuenta.html">Articulos</a> </li>
                                         <li > <a href="index.html">cerrar sesion</a> </li>
                                     </ul>
                                 </nav>
@@ -84,7 +85,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="blogtitlepage">
-                        <h2>Reparatodo</h2>
+                        <h2>Articulos</h2>
                     </div>
                 </div>
             </div>
@@ -100,23 +101,21 @@
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 width">
+                    <div class="col-lg-1 col-md-6 col-sm-12 width">
                         
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 width">
+                    <div class="col-lg-6000 col-md-6000 col-sm-12000 width">
                         <div class="address">
-                            <h3>Pedidos</h3>
                             <form>
                                 <div class="row">
-                                    <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
-                                        <tr bgcolor= "#FF2D00">
-                                            <td><font size ="3", color ="#000000">codigo</font></td>
-                                            <td><font size ="3", color ="#000000">nombre</font></td>
-                                            <td><font size ="3", color ="#000000">telefono</font></td>
-                                            <td><font size ="3", color ="#000000">email</font></td>
-                                            <td><font size ="3", color ="#000000">producto</font></td>
+                                    <table bordercolor = "#1a0494" border="0" cellpadding="10" cellspacing="10">
+                                        <tr bgcolor= "#FFFFFF">
+                                            <td><font size ="30", color ="#000000"><img src="images/3.jpg"/></font></td>
+                                            <td><font size ="3", color ="#000000">Codigo</font></td>
+                                            <td><font size ="3", color ="#000000">Nombre</font></td>
+                                            <td><font size ="3", color ="#000000">Valor</font></td>
+                                            <td><font size ="3", color ="#000000">Cantidad</font></td>
                                             <td><font size ="3", color ="#000000">descripcion del producto</font></td>
-                                            <td><font size ="3", color ="#000000">estado</font></td>
                                         </tr>
                                         
                                         <?php
@@ -126,11 +125,11 @@
                                         while($mostrar=mysqli_fetch_array($resultado)){
                                             ?>
                                         <tr>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['codigo'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><i><img src="images/3.jpg"/></i></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_apellido'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['telefono'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['email'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['descripcion'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_producto'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_producto'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['estado'] ?></font></td>
                                         </tr>
@@ -155,10 +154,10 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                 <form action="validarPedido.php" method="post" >              
-                    <input type="text" placeholder="Codigo del pedido" type="text"name="codigoPedido">
+                    <input type="text" class="contactus" placeholder="Codigo del pedido" type="text"name="codigoPedido">
                     <br><br>
-                    <input type="submit" name="boton3" value="Aprobar">
-                    <input type="submit" name="boton2" value="Rechazar">
+                    <input type="submit" class="send" name="boton3" value="Aprobar">
+                    <input type="submit" class="send" name="boton2" value="Rechazar">
                 </form>
                 </div>
                 </div>
