@@ -65,8 +65,8 @@
                                     <ul class="menu-area-main">
 
                                 
-                                        <li> <a href="recarga.html">Rcargas</a> </li>
-                                        <li> <a href="administrador.html">Paquetes</a> </li>  
+                                        <li> <a href="chance.php">Chances</a> </li>
+                                        <li> <a href="revision.php">Menú</a> </li>  
                                         <li> <a href="index.html">Cerrar sesion</a> </li>
                                                                              
                                     </ul>
@@ -105,14 +105,16 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
-                            <h3>Pedidos</h3>
+                            <h3>Chances</h3>
                             <form>
                                 <div class="row">
                                     <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
                                         <tr bgcolor= "#FF2D00">
                                             <td><font size ="3", color ="#000000">Codigo</font></td>
-                                            <td><font size ="3", color ="#000000">Descripcion</font></td>
-                                            <td><font size ="3", color ="#000000">valor</font></td>
+                                            <td><font size ="3", color ="#000000">loteria</font></td>
+                                            <td><font size ="3", color ="#000000">Premio </font></td>
+                                            <td><font size ="3", color ="#000000">Dias de juego </font></td>
+                             
                                            
                                         </tr>
                                         
@@ -152,7 +154,8 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                 <form action="validarPedido.php" method="post" >              
-                    <input class="contactus"  placeholder="Codigo del Paquete" type="text"name="codigoPedido">
+                    <input class="contactus"  placeholder="Codigo de loteria" type="text"name="codigoPedido">
+                    <input class="contactus"  placeholder="Numero" type="text"name="codigoPe">
                     <br><br>
                     <button class="send">Realizar</button>
                    
