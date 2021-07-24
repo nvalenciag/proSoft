@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Reparatodo</title>
+    <title>ReparaTodo</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -37,7 +37,7 @@
 </head>
 <!-- body -->
 
-<body class="main-layout contact-page">
+<body class="main-layout">
     <!-- loader  -->
     <div class="loader_bg">
         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
@@ -53,7 +53,7 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <a href="index.html"><img src="images/logueison.png" alt="logo" /></a>
+                                    <a href="index.html"><img src="images/LOGO_FACILISIMO.png" alt="logo" /></a>
                                 </div>
                             </div>
                         </div>
@@ -63,142 +63,111 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
-                                     
-                                        <li> <a href="revision.php">Revision</a> </li>
-                                        <li> <a href="reparaciones.php">Reparaciones</a> </li>   
-                                        <li> <a href="index.html">Cerrar Sesion</a> </li>
-                                  
+
+                                
+                                        <li> <a href="recarga.html">Rcargas</a> </li>
+                                        <li> <a href="administrador.html">Paquetes</a> </li>  
+                                        <li> <a href="index.html">Cerrar sesion</a> </li>
+                                                                             
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-                        <form class="search">
-                            <input class="form-control" type="text" placeholder="Search">
-                            <button><img src="images/search_icon.png"></button>
-                        </form>
                     </div>
                 </div>
             </div>
             <!-- end header inner -->
     </header>
     <!-- end header -->
-
     <div class="blogbg">
-    <div class="container">
+        <div class="container">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="blogtitlepage">
-                        <h2>Reparaciones</h2>
+                        <h2>Reparatodo</h2>
                     </div>
                 </div>
-    </div> 
-    <div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class=" col-md-7 offset-md-3">
-                <div class="address">
-                    <form>
-                        <div class="row">
+            </div>
+        </div>
+
+    </div>
+    <!-- Lastestnews -->
+    
+    <!-- end Lastestnews -->
+
+    <!--  footer -->
+    <footr>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 width">
+                        
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 width">
+                        <div class="address">
+                            <h3>Pedidos</h3>
+                            <form>
+                                <div class="row">
                                     <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
                                         <tr bgcolor= "#FF2D00">
-                                            <td><font size ="2", color ="#000000">codigo</font></td>
-                                            <td><font size ="2", color ="#000000">nombre</font></td>
-                                            <td><font size ="2", color ="#000000">telefono</font></td>
-                                            <td><font size ="2", color ="#000000">email</font></td>
-                                            <td><font size ="2", color ="#000000">producto</font></td>
-                                            <td><font size ="2", color ="#000000">descripcion del producto</font></td>
-                                            <td><font size ="2", color ="#000000">estado</font></td>
-                                            <td><font size ="2", color ="#000000">    Observaciones   </font></td>
+                                            <td><font size ="3", color ="#000000">Codigo</font></td>
+                                            <td><font size ="3", color ="#000000">Descripcion</font></td>
+                                            <td><font size ="3", color ="#000000">valor</font></td>
+                                           
                                         </tr>
+                                        
                                         <?php
-                                            include "db-conex.php";
-
-                                            
-                                            $nm=$_SESSION['nombre'];
-
-                                            $sql = "SELECT * FROM pedido where usuario_reparador='$nm' and estado!='finalizado'";
+                                            $sql = "SELECT * FROM pedido where estado='espera'";
                                             $resultado = mysqli_query($conexion, $sql);
 
                                         while($mostrar=mysqli_fetch_array($resultado)){
                                             ?>
                                         <tr>
-                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['codigo'] ?></font></td>
-                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['nombre_apellido'] ?></font></td>
-                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['telefono'] ?></font></td>
-                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['email'] ?></font></td>
-                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['descripcion'] ?></font></td>
-                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['nombre_producto'] ?></font></td>
-                                            <td><font size ="2", color ="#ffffff"><?php echo $mostrar['estado'] ?></font></td>
-                                            
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['codigo'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_apellido'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['telefono'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['email'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['descripcion'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_producto'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['estado'] ?></font></td>
                                         </tr>
                                         <?php 
                                         }
                                         ?>
                                     </table>
-                                    
+                                </div>
+                                
+                            </form>
                         </div>
-                    </form>                 
+                    </div>
+                    
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
+                <br>
+                <br>
+                <footr>
+        <div class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-12 width">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
-         <form action="validarComentario.php" method="post" >
-            <br>
-            <br>
-            <div class="col-sm-12">
-            <input type="text" placeholder="codigo" type="text"name="codigoh">
-            <br>
-            <br>
-            <input type="text" placeholder="Comentario" type="text"name="comentario">
-            <br>
-            <br>      
-              <input type="submit" name="boton7" value="Guardar">
-              <br><br>    
-                    
-
-             </div>
-         
-        </form>
-
-    <form action="validarFinalizar.php" method="post" >
-                  
-            <div class="col-sm-12">
-            <input type="text" placeholder="codigo" type="text"name="codigofin">
-            <br>
-            <br>
-            <input type="text" placeholder="Valor a pagar" type="text"name="montofin">
-            <br>  
-            <br>     
-              <input type="submit" name="boton8" value="Finalizar">
-                 
-                    
-
-             </div>
-         
-        </form>
-        </div>
+                <form action="validarPedido.php" method="post" >              
+                    <input class="contactus"  placeholder="Codigo del Paquete" type="text"name="codigoPedido">
+                    <br><br>
+                    <button class="send">Realizar</button>
+                   
+                </form>
+                </div>
                 </div>
                 </div>
                 </div>   
             </div>
-</div>
 
-    <!--  footer -->
-
-    <div class="copyright">
-        <div class="container">
-            <p>© 2021 Proyecto Software II <a href="https://html.design/"></a></p>
+            <div class="copyright">
+                <p>© 2021 Proyecto Software II <a href="https://html.design/"></a></p>
+            </div>
         </div>
-    </div>
-
+    </footr>
     <!-- end footer -->
     <!-- Javascript files-->
     <script src="js/jquery.min.js"></script>
