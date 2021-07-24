@@ -12,7 +12,7 @@ session_start();
 
 
 
-$conexion=mysqli_connect("localhost","root","aguileracamilo03","reparatodo");
+$conexion=mysqli_connect("localhost","root","root","reparatodo");
 
 $consulta="SELECT*FROM reparador where usuario='$nam' and contrasena='$email'  ";
 $resultado=mysqli_query($conexion,$consulta);
