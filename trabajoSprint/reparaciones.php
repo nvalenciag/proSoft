@@ -1,7 +1,7 @@
 <?php
     session_start();
-    $conexion = mysqli_connect("localhost", "root", "root", "reparatodo")
-?>
+    $conexion=mysqli_connect("localhost","root","root","reparatodo");
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +66,7 @@
                                      
                                         <li> <a href="revision.php">Revision</a> </li>
                                         <li> <a href="reparaciones.php">Reparaciones</a> </li>   
-                                        <li> <a href="pedidos.html">Cerrar Sesion</a> </li>
+                                        <li> <a href="index.html">Cerrar Sesion</a> </li>
                                   
                                     </ul>
                                 </nav>

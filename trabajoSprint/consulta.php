@@ -1,6 +1,7 @@
 <?php
     session_start();
-    $conexion = mysqli_connect("localhost", "root", "root", "reparatodo")
+    $conexion=mysqli_connect("localhost","root","root","reparatodo");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +65,7 @@
                                     <ul class="menu-area-main">
 
                                       
-                                        <li > <a href="pedidos.html">Volver</a> </li>
+                                        <li > <a href="index.html">Volver</a> </li>
                                     </ul>
                                 </nav>
                             </div>

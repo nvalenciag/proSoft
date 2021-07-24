@@ -32,7 +32,7 @@
 </head>
 <!-- body -->
 
-<body class="main-layout album-page">
+<body class="main-layout">
     <!-- loader  -->
     <div class="loader_bg">
         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
@@ -48,7 +48,7 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <a href="index.html"><img src="images/LOGO_FACILISIMO.png" alt="logo" /></a>
+                                    <a href="pedidos.html"><img src="images/LOGO_FACILISIMO.png" alt="logo" /></a>
                                 </div>
                             </div>
                         </div>
@@ -58,8 +58,9 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
-                                        <li> <a href="index.html">Registro De Usuario</a> </li>
-                                        <li> <a href="administrador.html"> Inicio De Sesion</a> </li>                                       
+                                        <li> <a href="revision.php">Menu</a> </li>
+                                        <li> <a href="index.html">Cerrar sesion</a> </li>
+
                                     </ul>
                                 </nav>
                             </div>
@@ -70,38 +71,68 @@
             </div>
             <!-- end header inner -->
     </header>
-    <!-- end header -->
 
-    <footr>
+
+    <!--  footer -->
+    <footr id="footer_with_contact">
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 width">
-                    </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
-                            <h3>Iniciar sesion</h3>
-                            <form action="validad.php" method="post">
+                            <h3>Editar Registro</h3>
+                            <form action="guardarPedido.php" method="post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <form action="validarPedido.php" method="post">
-                                            <input class="contactus" placeholder="Usuario" type="text" name="nam">
-                                        </form>
+                                        <input class="contactus" placeholder="Nombre y Apellidos" type="text" name="nombreCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Contraseña" type="text" name="email">
-                                    </div >
+                                        <input class="contactus" placeholder="Telefono" type="text" name="telefonoCliente">
+                                    </div>
                                     <div class="col-sm-12">
-                                        <button class="send">Iniciar sesion</button>
+                                        <input class="contactus" placeholder="Email" type="text" name="emailCliente">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Nombre del producto" type="text" name="nombreProducto">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <textarea class="textarea" placeholder="Descripcion del producto" type="text" name="descripcionProducto"></textarea>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <textarea class="textarea" placeholder="Descripcion del daño" type="text" name="descripcionArreglo"></textarea>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <button class="send">Modificar</button>
+                                        
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 width">
+                        <div class="address">
+                            <h3>Eliminar Cuenta</h3>
+                            <form action="guardarPedido.php" method="post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Usuario" type="text" name="usuarioCliente">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Contraseña" type="text" name="contraseñaCliente">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <button class="send">Eliminar</button>
+                                        
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2021 Proyecto Bases de Datos <a href="https://html.design/"></a></p>
+                <p>© 2021 Proyecto Bases De Datos</p>
             </div>
         </div>
     </footr>

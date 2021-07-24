@@ -16,7 +16,7 @@ $conexion=mysqli_connect("localhost","root","root","reparatodo");
 
 
 
-
+//if($nombreCliente.empty()||$telefonoCliente.empty()||$emailCliente.empty()||$descripcionProducto.empty()||$descripcionProducto.empty()){
 
   
 $sql= "INSERT INTO pedido (nombre_apellido ,telefono,email ,descripcion ,nombre_producto ,descripcion_producto,estado ) VALUES ('$nombreCliente','$telefonoCliente','$emailCliente','$nombreProducto','$descripcionProducto','$descripcionArreglo','espera')";   
@@ -24,8 +24,8 @@ $sql= "INSERT INTO pedido (nombre_apellido ,telefono,email ,descripcion ,nombre_
 
 if ($link-> query($sql) === TRUE) {
 
-    echo "OK";      
-    header("location:pedidos.html"); 
+    echo "OK";    
+    header("location:index.html"); 
 
 }else {
     echo "ERROR";

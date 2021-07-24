@@ -48,7 +48,7 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <a href="pedidos.html"><img src="images/logueison.png" alt="logo" /></a>
+                                    <a href="pedidos.html"><img src="images/LOGO_FACILISIMO.png" alt="logo" /></a>
                                 </div>
                             </div>
                         </div>
@@ -58,22 +58,15 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
-                                        <li> <a href="pedidos.html">Pedido</a> </li>
-                                        <li> <a href="administrador.html">Administrador</a> </li>
+                                        <li> <a href="revision.php">Menu</a> </li>
+                                        <li> <a href="index.html">Cerrar sesion</a> </li>
 
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-                        <form action="consulta.php" method="post" >
-                            <form class="search">
-                                <input class="form-control" type="text" placeholder="buscar pedido"type="text" name="codigoPedido">
-                                <button><img src="images/buscar.jpeg"></button>
-                            </form>
-                        </form>
-                    </div>
+                    
                 </div>
             </div>
             <!-- end header inner -->
@@ -85,26 +78,9 @@
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 width">
-                        <div class="address">
-                            <h3>Realizar pedido</h3>
-                            <ul class="locarion_icon">
-                                <li><img src="icon/1.png" alt="icon" />Quindio, Armenia</li>
-                                <li><img src="icon/2.png" alt="icon" />Telefono : ( +57 314 6536528 )</li>
-                                <li><img src="icon/3.png" alt="icon" />Email : mchl@gmail.com</li>
-
-                            </ul>
-
-                            <ul class="contant_icon">
-                                <li><img src="icon/fb.png" alt="icon" /></li>
-                                <li><img src="icon/tw.png" alt="icon" /></li>
-                                <li><img src="icon/instagram.png" alt="icon" /></li>
-                            </ul>
-                        </div>
-                    </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
-                            <h3>Datos</h3>
+                            <h3>Editar Registro</h3>
                             <form action="guardarPedido.php" method="post">
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -116,17 +92,29 @@
                                     <div class="col-sm-12">
                                         <input class="contactus" placeholder="Email" type="text" name="emailCliente">
                                     </div>
+                                   
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Nombre del producto" type="text" name="nombreProducto">
+                                        <button class="send">Modificar</button>
+                                        
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 width">
+                        <div class="address">
+                            <h3>Eliminar Cuenta</h3>
+                            <form action="guardarPedido.php" method="post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Usuario" type="text" name="usuarioCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <textarea class="textarea" placeholder="Descripcion del producto" type="text" name="descripcionProducto"></textarea>
+                                        <input class="contactus" placeholder="Contraseña" type="text" name="contraseñaCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <textarea class="textarea" placeholder="Descripcion del daño" type="text" name="descripcionArreglo"></textarea>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <button class="send">Registrar</button>
+                                        <button class="send">Eliminar</button>
+                                        
                                     </div>
                                 </div>
                             </form>
@@ -136,7 +124,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2021 Proyecto Software II</p>
+                <p>© 2021 Proyecto Bases De Datos</p>
             </div>
         </div>
     </footr>

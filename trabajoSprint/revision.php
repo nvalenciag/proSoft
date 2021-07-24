@@ -1,7 +1,7 @@
 <?php
     session_start();
-    $conexion = mysqli_connect("localhost", "root", "root", "reparatodo")
-?>
+    $conexion=mysqli_connect("localhost","root","root","reparatodo");
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +53,7 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <a href="index.html"><img src="images/logueison.png" alt="logo" /></a>
+                                    <a href="index.html"><img src="images/LOGO_FACILISIMO.png" alt="logo" /></a>
                                 </div>
                             </div>
                         </div>
@@ -64,10 +64,11 @@
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
 
-                                      
-                                        <li > <a href="revision.php">Revision</a> </li>
-                                        <li > <a href="reparaciones.php">Reparaciones</a> </li>
-                                        <li > <a href="pedidos.html">cerrar sesion</a> </li>
+                                        <li > <a href="ahustesCuenta.html">Ajustes de cuenta</a> </li>
+                                        <li > <a href="pagos.html">Pagos</a> </li>
+                                        <li > <a href="revision.php">Recargas y Datos</a> </li>
+                                        <li > <a href="reparaciones.php">Chances</a> </li>
+                                        <li > <a href="index.html">cerrar sesion</a> </li>
                                     </ul>
                                 </nav>
                             </div>
