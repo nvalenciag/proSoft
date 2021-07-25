@@ -1,8 +1,8 @@
 <?php
     session_start();
-    $conexion=mysqli_connect("localhost","root","root","reparatodo");
-    ?>
+    $conexion=mysqli_connect("localhost","root","aguileracamilo03","reparatodo");
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>ReparaTodo</title>
+    <title>Consulta</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -64,11 +64,8 @@
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
 
-                                        <li> <a href="revision.php">Menu</a> </li>
-                                        <li> <a href="recarga.html">Recargas</a> </li>
-                                        <li> <a href="paquete.php">Paquetes</a> </li>  
-                                        <li> <a href="index.html">Cerrar sesion</a> </li>
-                                                                             
+                                      
+                                        <li > <a href="giroEnviado.html">Volver</a> </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -89,72 +86,77 @@
                 </div>
             </div>
         </div>
-
     </div>
-    <!-- Lastestnews -->
-    
-    <!-- end Lastestnews -->
-
-    <!--  footer -->
     <footr>
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 width">
-                        
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 width">
+                    <div class="col-lg-3 col-md-7 col-sm-12 width">                       
+                </div>
+                    <div class="col-lg-6 col-md-7 col-sm-12 width">
                         <div class="address">
-                            <h3>Pedidos</h3>
+                            <h3>Pedido</h3>
                             <form>
                                 <div class="row">
                                     <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
                                         <tr bgcolor= "#FF2D00">
-                                            <td><font size ="3", color ="#000000">Codigo</font></td>
-                                            <td><font size ="3", color ="#000000">Descripcion</font></td>
-                                            <td><font size ="3", color ="#000000">valor</font></td>
-                                           
+                                            <td><font size ="3", color ="#000000">codigo</font></td>
+                                            <td><font size ="3", color ="#000000">Cedula Destinatario</font></td>
+                                            <td><font size ="3", color ="#000000">Cedula Remitente</font></td>
+                                            <td><font size ="3", color ="#000000">Valor</font></td>
+                                            <td><font size ="3", color ="#000000">Fecha</font></td>
+                                       
                                         </tr>
                                         
                                         <?php
-                                            $sql = "SELECT * FROM pedido where estado='espera'";
+                                            $codigoCliente=$_POST['codigoPedido'];
+                                            $sql = "SELECT * FROM pedido where codigo='$codigoCliente'";
                                             $resultado = mysqli_query($conexion, $sql);
 
                                         while($mostrar=mysqli_fetch_array($resultado)){
                                             ?>
                                         <tr>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['codigo'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_apellido'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['telefono'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['email'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['descripcion'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_producto'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_apellido'] ?></font></td>
+                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['valorReparacion'] ?></font></td>
                                             <td><font size ="3", color ="#ffffff"><?php echo $mostrar['estado'] ?></font></td>
                                         </tr>
                                         <?php 
                                         }
                                         ?>
                                     </table>
-                                </div>
-                                
+                                </div>                              
                             </form>
                         </div>
                     </div>
+
                     
                 </div>
+                
                 <br>
                 <br>
-                <footr>
-        <div class="footer">
+                <form action="validarPedido.php" method="post">              
+                
+                </form>
+                </div>
+            
+        </div>
+    </footr>
+    <footr>
+    <div class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-12 width">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                 <form action="validarPedido.php" method="post" >              
-                    <input class="contactus"  placeholder="Codigo del Paquete" type="text"name="codigoPedido">
+                    <input class="contactus"  placeholder="Codigo del Giro" type="text"name="codigoPedido">
                     <br><br>
-                    <button class="send">Realizar</button>
+                    <button class="send">Recibir</button>
                    
                 </form>
                 </div>
@@ -164,10 +166,11 @@
             </div>
 
             <div class="copyright">
-                <p>© 2021 Proyecto Software II <a href="https://html.design/"></a></p>
+                <p>© 2021 Proyecto Bases de Datos<a href="https://html.design/"></a></p>
             </div>
         </div>
     </footr>
+   
     <!-- end footer -->
     <!-- Javascript files-->
     <script src="js/jquery.min.js"></script>

@@ -58,17 +58,21 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
-                                        <li> <a href="revision.php">Menu</a> </li>
-                                        <li> <a href="pagos.html">Pago Soat</a> </li>
-                                        <li> <a href="pagoServicios.html">Pago Servicios publicos</a> </li>
-                                        <li> <a href="index.html">Cerrar sesion</a> </li>
-
+                                        <li> <a href="giroEnviado.html">Realizar Giro</a> </li>
+                                       
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+                        <form action="consulta.php" method="post" >
+                            <form class="search">
+                                <input class="form-control" type="text" placeholder="Giros Realizados"type="text" name="codigoPedido">
+                                <button><img src="images/buscar.jpeg"></button>
+                            </form>
+                        </form>
+                    </div>
                 </div>
             </div>
             <!-- end header inner -->
@@ -83,35 +87,20 @@
                     
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
-                            <h3>Pago Del Soat</h3>
+                            <h3>Datos del giro</h3>
                             <form action="guardarPedido.php" method="post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Tarjeta de propiedad" type="text" name="tarjetaCliente">
+                                        <input class="contactus" placeholder="CC destinatario" type="text" name="nombreCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Soat Vencido" type="text" name="soatCliente">
+                                        <input class="contactus" placeholder="CC Remitente" type="text" name="telefonoCliente">
                                     </div>
-                                    
                                     <div class="col-sm-12">
-                                        <button class="send">Generar Valor</button>
-                                        
+                                        <input class="contactus" placeholder="Valor" type="text" name="telefon">
                                     </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 width">
-                        <div class="address">
-                            <h3>Valor a pagar</h3>
-                            <form action="guardarPedido.php" method="post">
-                                <div class="row">
                                     <div class="col-sm-12">
-                                        <input class="contactus"  readonly="readonly" placeholder="Valor a pagar" type="text" name="contraseñaCliente">
-                                    </div>
-                                    
-                                    <div class="col-sm-12">
-                                        <button class="send">Pagar</button>
+                                        <button class="send">Realizar</button>
                                         
                                     </div>
                                 </div>

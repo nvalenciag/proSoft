@@ -64,9 +64,8 @@
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
 
-                                
-                                        <li> <a href="chance.php">Chances</a> </li>
                                         <li> <a href="revision.php">Menú</a> </li>  
+                                        <li> <a href="chance.php">Chances</a> </li>
                                         <li> <a href="index.html">Cerrar sesion</a> </li>
                                                                              
                                     </ul>
@@ -167,7 +166,7 @@
             </div>
 
             <div class="copyright">
-                <p>© 2021 Proyecto Software II <a href="https://html.design/"></a></p>
+                <p>© 2021 Proyecto Bases de Datos <a href="https://html.design/"></a></p>
             </div>
         </div>
     </footr>

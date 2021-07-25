@@ -53,7 +53,7 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <a href="index.html"><img src="images/logueison.png" alt="logo" /></a>
+                                    <a href="index.html"><img src="images/LOGO_FACILISIMO.png" alt="logo" /></a>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                                     <ul class="menu-area-main">
 
                                       
-                                        <li > <a href="index.html">Volver</a> </li>
+                                        <li > <a href="giroEnviado.html">Volver</a> </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -76,17 +76,6 @@
             <!-- end header inner -->
     </header>
     <!-- end header -->
-    <div class="blogbg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="blogtitlepage">
-                        <h2>Reparatodo</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <footr>
         <div class="footer">
             <div class="container">
@@ -101,13 +90,11 @@
                                     <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
                                         <tr bgcolor= "#FF2D00">
                                             <td><font size ="3", color ="#000000">codigo</font></td>
-                                            <td><font size ="3", color ="#000000">nombre</font></td>
-                                            <td><font size ="3", color ="#000000">telefono</font></td>
-                                            <td><font size ="3", color ="#000000">email</font></td>
-                                            <td><font size ="3", color ="#000000">producto</font></td>
-                                            <td><font size ="3", color ="#000000">descripcion del producto</font></td>
-                                             <td><font size ="3", color ="#000000">valor a pagar</font></td>
-                                            <td><font size ="3", color ="#000000">estado</font></td>
+                                            <td><font size ="3", color ="#000000">Cedula Destinatario</font></td>
+                                            <td><font size ="3", color ="#000000">Cedula Remitente</font></td>
+                                            <td><font size ="3", color ="#000000">Valor</font></td>
+                                            <td><font size ="3", color ="#000000">Fecha</font></td>
+                                       
                                         </tr>
                                         
                                         <?php
@@ -149,58 +136,30 @@
         </div>
     </footr>
     <footr>
-        <div class="footer">
+    <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-2 col-sm-12 width">                       
-                </div>
-                    <div class="col-lg-6 col-md-2 col-sm-12 width">
-                        <div class="address">
-                        
-                            <form>
-                                <div class="row">
-                                    <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
-                                        <tr bgcolor= "#FF2D00">
-                                            <td><font size ="3", color ="#000000">codigo</font></td>
-                                            <td><font size ="3", color ="#000000">comentarios</font></td>
-  
-                                        </tr>
-                                        
-                                        <?php
-                                            $codigoCliente=$_POST['codigoPedido'];
-                                            $sql = "SELECT * FROM observaciones where codigo_pedido='$codigoCliente'";
-                                            $resultado = mysqli_query($conexion, $sql);
-
-                                        while($mostrar=mysqli_fetch_array($resultado)){
-                                            ?>
-                                        <tr>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['codigo'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['comentario'] ?></font></td>
-                 
-                                        </tr>
-                                        <?php 
-                                        }
-                                        ?>
-                                    </table>
-                                </div>                              
-                            </form>
-                        </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 width">
                     </div>
-                    
-                    
-                </div>
-                
-                <br>
-                <br>
-                <form action="validarPedido.php" method="post">              
-                
+                    <div class="col-lg-6 col-md-6 col-sm-12 width">
+                <form action="validarPedido.php" method="post" >              
+                    <input class="contactus"  placeholder="Codigo del Giro" type="text"name="codigoPedido">
+                    <br><br>
+                    <button class="send">Recibir</button>
+                   
                 </form>
                 </div>
+                </div>
+                </div>
+                </div>   
+            </div>
+
             <div class="copyright">
-                <p>© 2021 Proyecto Software II <a href="https://html.design/"></a></p>
+                <p>© 2021 Proyecto Bases de Datos<a href="https://html.design/"></a></p>
             </div>
         </div>
     </footr>
+   
     <!-- end footer -->
     <!-- Javascript files-->
     <script src="js/jquery.min.js"></script>
