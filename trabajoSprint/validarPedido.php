@@ -5,12 +5,12 @@ session_start();
 $nm=$_SESSION['nombre'];
 
 $codigoPedido=$_POST['codigoPedido'];
-$nam=$_POST['nam'];
+$nam=$_POST['usuario'];
 
 
 
 
-$conexion=mysqli_connect("localhost","root","root","reparatodo");
+$conexion=mysqli_connect("localhost","root","root","facilisimo");
 
 $consulta="SELECT*FROM pedido where codigo='$codigoPedido'" ;
 $resultado=mysqli_query($conexion,$consulta);

@@ -6,7 +6,7 @@ while($cont<2){
 include "db-conex.php";
 
 
-$conexion=mysqli_connect("localhost","root","root","reparatodo");
+$conexion=mysqli_connect("localhost","root","root","facilisimo");
 
 $consulta="SELECT*FROM pedido where codigo='$codigofin'" ;
 $resultado=mysqli_query($conexion,$consulta);

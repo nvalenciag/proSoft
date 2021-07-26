@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $conexion=mysqli_connect("localhost","root","root","reparatodo");
+    $conexion=mysqli_connect("localhost","root","root","facilisimo");
     ?>
 
 <!DOCTYPE html>
@@ -68,7 +68,7 @@
                                         <li > <a href="pagos.html">Pagos</a> </li>
                                         <li > <a href="recarga.html">Recargas y Datos</a> </li>
                                         <li > <a href="chance.php">Chances</a> </li>
-                                        <li > <a href="ahustesCuenta.html">Articulos</a> </li>
+                                        <li > <a href="revision.php">Articulos</a> </li>
                                         <li > <a href="index.html">cerrar sesion</a> </li>
                                     </ul>
                                 </nav>
@@ -111,19 +111,14 @@
                                     <table bordercolor = "#1a0494" border="1" cellpadding="10" cellspacing="10">
                                         <tr bgcolor= "#FFFFFF">
                                             <td><font size ="3", color ="#000000"></font></td>
-                                            <td><font size ="3", color ="#000000">Codigo</font></td>
+                                            <td><font size ="3", color ="#000000">CodigoArticulo</font></td>
                                             <td><font size ="3", color ="#000000">Nombre</font></td>
+                                            <td><font size ="3", color ="#000000">Descripcion producto</font></td>
                                             <td><font size ="3", color ="#000000">Valor</font></td>
                                             <td><font size ="3", color ="#000000">Cantidad</font></td>
-                                            <td><font size ="3", color ="#000000">descripcion producto</font></td>
                                         </tr>
                                         
-                                        <?php
-                                            $sql = "SELECT * FROM pedido where estado='espera'";
-                                            $resultado = mysqli_query($conexion, $sql);
-
-                                        while($mostrar=mysqli_fetch_array($resultado)){
-                                            ?>
+                                        
                                         <tr>
                                             <td><font size ="3", color ="#000000"><i><img src="images/3.jpg"/></i></font></td>
                                             <td><font size ="3", color ="#000000"><?php echo $mostrar['nombre_apellido'] ?></font></td>
@@ -132,9 +127,8 @@
                                             <td><font size ="3", color ="#000000"><?php echo $mostrar['nombre_producto'] ?></font></td>
                                             <td><font size ="3", color ="#000000"><?php echo $mostrar['estado'] ?></font></td>
                                         </tr>
-                                        <?php 
-                                        }
-                                        ?>
+                                        
+                                        
                                     </table>
                                 </div>
                                 
@@ -165,7 +159,7 @@
             </div>
 
             <div class="copyright">
-                <p>© © 2021 Proyecto Bases de Datos <a href="https://html.design/"></a></p>
+                <p>© 2021 Proyecto Bases de Datos <a href="https://html.design/"></a></p>
             </div>
         </div>
     </footr>

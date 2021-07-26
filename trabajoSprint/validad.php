@@ -1,20 +1,20 @@
 <?php
 include('db.php');
 
-$nam=$_POST['nam'];
-$email=$_POST['email'];
+$nam=$_POST['Usuario'];
+$email=$_POST['Contrasena'];
 
 session_start();
 $nm=$_SESSION['nombre'];
-$_SESSION['nombre']=$_POST['nam'];
+$_SESSION['nombre']=$_POST['Usuario'];
 
 session_start();
 
 
 
-$conexion=mysqli_connect("localhost","root","root","reparatodo");
+$conexion=mysqli_connect("localhost","root","root","facilisimo");
 
-$consulta="SELECT*FROM reparador where usuario='$nam' and contrasena='$email'  ";
+$consulta="SELECT*FROM cliente where usuario='$nam' and contrasena='$email'  ";
 $resultado=mysqli_query($conexion,$consulta);
 
 
@@ -25,13 +25,22 @@ if($filas){
     header("location:revision.php");
 
 }else{
-    ?>
-    <?php
-    include("index.html");
 
-  ?>
-  <h1 class="bad">ERROR DE AUTENTIFICACION</h1>
-  <?php
+$consulta="SELECT*FROM Empleado where usuario='$nam' and contrasena='$email'  ";
+$resultado=mysqli_query($conexion,$consulta);
+
+
+$filas=mysqli_num_rows($resultado);
+
+if($filas){
+  print "$filas";
+    header("location:Empleado.php");
+
+}else{
+  header("location:administrador.html");
+
+}
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);
+?>

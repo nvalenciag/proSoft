@@ -64,11 +64,13 @@
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
 
-                                        <li> <a href="revision.php">Menu</a> </li>
-                                        <li> <a href="recarga.html">Recargas</a> </li>
-                                        <li> <a href="paquete.php">Paquetes</a> </li>  
-                                        <li> <a href="index.html">Cerrar sesion</a> </li>
-                                                                             
+                                        <li > <a href="ahustesCuenta.html">Ajustes de cuenta</a> </li>
+                                        <li > <a href="pagos.html">Pagos</a> </li>
+                                        <li > <a href="recarga.html">Recargas y Datos</a> </li>
+                                        <li > <a href="chance.php">Chances</a> </li>
+                                        <li > <a href="revision.php">Articulos</a> </li>
+                                        <li > <a href="giroEnviado.html">Giros</a> </li>
+                                        <li > <a href="index.html">cerrar sesion</a> </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -84,7 +86,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="blogtitlepage">
-                        <h2>Reparatodo</h2>
+                        <h2>Articulos</h2>
                     </div>
                 </div>
             </div>
@@ -100,40 +102,30 @@
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 width">
+                    <div class="col-lg-2 col-md-6 col-sm-12 width">
                         
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 width">
+                    <div class="col-lg-8 col-md-8 col-sm-8 width">
                         <div class="address">
-                            <h3>Pedidos</h3>
                             <form>
                                 <div class="row">
-                                    <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
-                                        <tr bgcolor= "#FF2D00">
-                                            <td><font size ="3", color ="#000000">Codigo</font></td>
-                                            <td><font size ="3", color ="#000000">Descripcion</font></td>
-                                            <td><font size ="3", color ="#000000">valor</font></td>
-                                           
+                                    <table bordercolor = "#1a0494" border="1" cellpadding="10" cellspacing="10">
+                                        <tr bgcolor= "#FFFFFF">
+                                            <td><font size ="3", color ="#000000"></font></td>
+                                            <td><font size ="3", color ="#000000">CodigoArticulo</font></td>
+                                            <td><font size ="3", color ="#000000">Nombre</font></td>
+                                            <td><font size ="3", color ="#000000">Descripcion producto</font></td>
+                                            <td><font size ="3", color ="#000000">Valor</font></td>
+                                            <td><font size ="3", color ="#000000">Cantidad</font></td>
                                         </tr>
-                                        
-                                        <?php
-                                            $sql = "SELECT * FROM pedido where estado='espera'";
-                                            $resultado = mysqli_query($conexion, $sql);
-
-                                        while($mostrar=mysqli_fetch_array($resultado)){
-                                            ?>
                                         <tr>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['codigo'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_apellido'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['telefono'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['email'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['descripcion'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_producto'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['estado'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><i><img src="images/3.jpg"/></i></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['nombre_apellido'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['telefono'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['descripcion'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['nombre_producto'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['estado'] ?></font></td>
                                         </tr>
-                                        <?php 
-                                        }
-                                        ?>
                                     </table>
                                 </div>
                                 
@@ -152,10 +144,10 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                 <form action="validarPedido.php" method="post" >              
-                    <input class="contactus"  placeholder="Codigo del Paquete" type="text"name="codigoPedido">
+                    <input type="text" class="contactus" placeholder="Codigo del producto" type="text"name="codigoPedido">
                     <br><br>
-                    <button class="send">Realizar</button>
-                   
+                    <input type="submit" class="send" name="boton3" value="Acepatar">
+                    <input type="submit" class="send" name="boton2" value="Eliminar">
                 </form>
                 </div>
                 </div>
@@ -164,7 +156,7 @@
             </div>
 
             <div class="copyright">
-                <p>© 2021 Proyecto Software II <a href="https://html.design/"></a></p>
+                <p>© 2021 Proyecto Bases de Datos <a href="https://html.design/"></a></p>
             </div>
         </div>
     </footr>

@@ -71,44 +71,85 @@
             </div>
             <!-- end header inner -->
     </header>
-
-
     <!--  footer -->
     <footr id="footer_with_contact">
+        <div class="footer">
+            <div class="container">
+                <div class="row">                              
+                    <div class="col-lg-1 col-md-8 col-sm-8 width">
+                        <div class="address">
+                            <form>
+                                <div class="row">
+                                    <table bordercolor = "#1a0494" border="1" cellpadding="10" cellspacing="10">
+                                        <tr bgcolor= "#FFFFFF">
+                                            <td><font size ="3", color ="#000000">nombre</font></td>
+                                            <td><font size ="3", color ="#000000">CodigoArticulo</font></td>
+                                            <td><font size ="3", color ="#000000">Nombre</font></td>
+                                            <td><font size ="3", color ="#000000">Descripcion producto</font></td>
+                                            <td><font size ="3", color ="#000000">Valor</font></td>
+                                            <td><font size ="3", color ="#000000">Cantidad</font></td>
+                                        </tr>
+                                        
+                                        
+                                        <tr>
+                                            <td><font size ="3", color ="#000000">looool</font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['nombre_apellido'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['telefono'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['descripcion'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['nombre_producto'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['estado'] ?></font></td>
+                                        </tr>
+                                        
+                                        
+                                    </table>
+                                </div>  
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
-                            <h3>Editar Registro</h3>
+                            <h3>Registro</h3>
                             <form action="guardarPedido.php" method="post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Nombre y Apellidos" type="text" name="nombreCliente">
+                                        <input class="contactus" placeholder="Cedula" type="text" name="cedulaCliente">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Nombres" type="text" name="nombreCliente">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Apellidos" type="text" name="apellidoCliente">
                                     </div>
                                     <div class="col-sm-12">
                                         <input class="contactus" placeholder="Telefono" type="text" name="telefonoCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Email" type="text" name="emailCliente">
+                                        <input class="contactus" placeholder="Fecha nacimiento: año/mes/dia" type="text" name="fechaNCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Nombre del producto" type="text" name="nombreProducto">
+                                        <input class="contactus" placeholder="Email" type="text" name="usuarioCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <textarea class="textarea" placeholder="Descripcion del producto" type="text" name="descripcionProducto"></textarea>
+                                        <textarea class="textarea" placeholder="Contraseña" type="text" name="ContraseñaCliente"></textarea>
                                     </div>
                                     <div class="col-sm-12">
-                                        <textarea class="textarea" placeholder="Descripcion del daño" type="text" name="descripcionArreglo"></textarea>
+                                        <textarea class="textarea" placeholder="Numero de Cuenta" type="text" name="cuentaCliente"></textarea>
                                     </div>
                                     <div class="col-sm-12">
-                                        <button class="send">Modificar</button>
+                                        <input type="submit" class="send" name="boton3" value="Guardar">
+                                        <input type="submit" class="send" name="boton2" value="Modificar">
                                         
+                                    </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
-                    </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
                             <h3>Eliminar Cuenta</h3>
@@ -126,11 +167,18 @@
                                     </div>
                                 </div>
                             </form>
+                        </div> 
+                        <td>                          '</td>
+                        <div class="col-sm-12">
+                            <input class="contactus" placeholder="Contraseña" type="text" name="contraseñaCliente">
                         </div>
-                    </div>
-                    
+                        <div class="col-sm-12">
+                            <button class="send">Buscar por cedula</button>
+                            
+                        </div>
                 </div>
             </div>
+                
             <div class="copyright">
                 <p>© 2021 Proyecto Bases De Datos</p>
             </div>

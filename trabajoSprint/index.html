@@ -89,25 +89,31 @@
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
                             <h3>Registro de datos</h3>
-                            <form action="guardarPedido.php" method="post">
+                            <form action="guardarUsuario.php" method="post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Nombre y Apellidos" type="text" name="nombreCliente">
+                                        <input class="contactus" placeholder="Cedula" type="text" name="cedulaCliente">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Nombres" type="text" name="nombreCliente">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Apellidos" type="text" name="apellidoCliente">
                                     </div>
                                     <div class="col-sm-12">
                                         <input class="contactus" placeholder="Telefono" type="text" name="telefonoCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Email" type="text" name="emailCliente">
+                                        <input class="contactus" placeholder="Fecha nacimiento: año/mes/dia" type="text" name="fechaNCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Nombre del producto" type="text" name="nombreProducto">
+                                        <input class="contactus" placeholder="Email" type="text" name="usuarioCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <textarea class="textarea" placeholder="Descripcion del producto" type="text" name="descripcionProducto"></textarea>
+                                        <textarea class="textarea" placeholder="Contraseña" type="text" name="ContraseñaCliente"></textarea>
                                     </div>
                                     <div class="col-sm-12">
-                                        <textarea class="textarea" placeholder="Descripcion del daño" type="text" name="descripcionArreglo"></textarea>
+                                        <textarea class="textarea" placeholder="Numero de Cuenta" type="text" name="cuentaCliente"></textarea>
                                     </div>
                                     <div class="col-sm-12">
                                         <button class="send">Registrar</button>
