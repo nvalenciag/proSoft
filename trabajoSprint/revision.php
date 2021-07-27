@@ -65,7 +65,7 @@
                                     <ul class="menu-area-main">
 
                                         <li > <a href="ahustesCuenta.html">Ajustes de cuenta</a> </li>
-                                        <li > <a href="pagos.html">Pagos</a> </li>
+                                        <li > <a href="index.html">Pedidos</a> </li>
                                         <li > <a href="recarga.html">Recargas y Datos</a> </li>
                                         <li > <a href="chance.php">Chances</a> </li>
                                         <li > <a href="revision.php">Articulos</a> </li>

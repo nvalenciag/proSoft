@@ -114,33 +114,23 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
-                            <h3>Registro</h3>
+                            <h3>Pedido</h3>
                             <form action="guardarPedido.php" method="post">
                                 <div class="row">
+                                    
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Cedula" type="text" name="cedulaCliente">
+                                        <input class="contactus" placeholder="codigo" type="text" name="nombreCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Nombres" type="text" name="nombreCliente">
+                                        <input class="contactus" placeholder="estado" type="text" name="nombreCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Apellidos" type="text" name="apellidoCliente">
+                                        <input class="contactus" placeholder="cliente_cedula" type="text" name="apellidoCliente">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Telefono" type="text" name="telefonoCliente">
+                                        <input class="contactus" placeholder="Articulo_codigoArticulo" type="text" name="telefonoCliente">
                                     </div>
-                                    <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Fecha nacimiento: año/mes/dia" type="text" name="fechaNCliente">
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Email" type="text" name="usuarioCliente">
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <textarea class="textarea" placeholder="Contraseña" type="text" name="ContraseñaCliente"></textarea>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <textarea class="textarea" placeholder="Numero de Cuenta" type="text" name="cuentaCliente"></textarea>
-                                    </div>
+                                    
                                     <div class="col-sm-12">
                                         <input type="submit" class="send" name="boton3" value="Guardar">
                                         <input type="submit" class="send" name="boton2" value="Modificar">
@@ -152,37 +142,38 @@
                         </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
-                            <h3>Eliminar Cuenta</h3>
+                            <h3>Eliminar Pedido</h3>
                             <form action="guardarPedido.php" method="post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Usuario" type="text" name="usuarioCliente">
+                                        <input class="contactus" placeholder="Codigo del pedido" type="text" name="usuarioCliente">
                                     </div>
-                                    <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Contraseña" type="text" name="contraseñaCliente">
-                                    </div>
+                                    
                                     <div class="col-sm-12">
                                         <button class="send">Eliminar</button>
                                         
                                     </div>
                                 </div>
                             </form>
-                        </div> 
-                        <td>                          '</td>
-                        <div class="col-sm-12">
-                            <input class="contactus" placeholder="Contraseña" type="text" name="contraseñaCliente">
+                        </div>                     
+                        <div class="col-lg-5 col-md-6 col-sm-12 width"></div>
+                            <div class="address">
+                                <h3>Buscar Pedido</h3>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Codigo del pedido" type="text" name="contraseñaCliente">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <button class="send">Buscar por numero de pedido</button>                            
+                                    </div>
+                            </div>
                         </div>
-                        <div class="col-sm-12">
-                            <button class="send">Buscar por cedula</button>
-                            
-                        </div>
-                </div>
-            </div>
-                
+                    </div>
+                </div>                
             <div class="copyright">
                 <p>© 2021 Proyecto Bases De Datos</p>
             </div>
         </div>
+    </div>
     </footr>
     <!-- end footer -->
     <!-- Javascript files-->

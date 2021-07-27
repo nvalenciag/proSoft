@@ -6,6 +6,8 @@ $email=$_POST['Contrasena'];
 
 session_start();
 $nm=$_SESSION['nombre'];
+$tablas=$_SESSION['tabla'];
+$_SESSION['tabla']="";
 $_SESSION['nombre']=$_POST['Usuario'];
 
 session_start();
