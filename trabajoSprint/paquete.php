@@ -1,8 +1,10 @@
 <?php
     session_start();
+    $tablas3="";
+    $tablas3=$_SESSION['tabla3'];
     $conexion=mysqli_connect("localhost","root","root","facilisimo");
-    ?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>ReparaTodo</title>
+    <title>Facilisimo</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -53,7 +55,7 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <a href="index.html"><img src="images/LOGO_FACILISIMO.png" alt="logo" /></a>
+                                    <a href="pedidos.html"><img src="images/LOGO_FACILISIMO.png" alt="logo" /></a>
                                 </div>
                             </div>
                         </div>
@@ -63,108 +65,136 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
+                                        <li> <a href="Empleado.php">Menu</a> </li>
+                                        <li> <a href="administrador.html">Cerrar sesion</a> </li>
 
-                                        <li> <a href="revision.php">Menu</a> </li>
-                                        <li> <a href="recarga.html">Recargas</a> </li>
-                                        <li> <a href="paquete.php">Paquetes</a> </li>  
-                                        <li> <a href="index.html">Cerrar sesion</a> </li>
-                                                                             
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             <!-- end header inner -->
     </header>
-    <!-- end header -->
-    <div class="blogbg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="blogtitlepage">
-                        <h2>Reparatodo</h2>
+    <!--  footer -->
+    <footr id="footer_with_contact">
+        <div class="footer">
+            <div class="container">
+                <div class="row">                              
+                    <div class="col-lg-1 col-md-9 col-sm-8 width">
+                        <div class="address">
+                            <form>
+                                <div class="row">
+                                    <table bordercolor = "#1a0494" border="1" cellpadding="10" cellspacing="10">
+                                        <tr bgcolor= "#FFFFFF">
+                                            <td><font size ="3", color ="#000000">Codigo</font></td>
+                                            <td><font size ="3", color ="#000000">Fecha Realizado</font></td>
+                                            <td><font size ="3", color ="#000000">Fecha Limite</font></td>
+                                            <td><font size ="3", color ="#000000">Codigo Paquete</font></td>
+                                            <td><font size ="3", color ="#000000">Telefono</font></td>
+                                           
+                                        </tr>
+                                        <?php
+                                           
+                                           if($tablas3){
+                                            $sql = "SELECT * FROM paquete where codigo='$tablas3'";
+                                            $resultado = mysqli_query($conexion, $sql);
+                                            }else{
+                                            $sql = "SELECT * FROM paquete";
+                                            $resultado = mysqli_query($conexion, $sql);
+                                            }
+
+                                        while($mostrar=mysqli_fetch_array($resultado)){
+                                            ?>
+                                        
+                                        <tr>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['Codigo'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['FechaRealizado'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['FechaLimite'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['tipoPaquete_Codigo'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['Telefono_Cliente_Numero'] ?></font></td>
+                                         
+                                        </tr>
+                                        
+                                        <?php 
+                                        }
+                                        ?>
+                                        
+                                    </table>
+                                </div>  
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div>
-    <!-- Lastestnews -->
-    
-    <!-- end Lastestnews -->
-
-    <!--  footer -->
-    <footr>
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 width">
-                        
-                    </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
                         <div class="address">
-                            <h3>Pedidos</h3>
-                            <form>
+                            <h3>Paquetes</h3>
+                            <form action="validarPaquete.php" method="post">
                                 <div class="row">
-                                    <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
-                                        <tr bgcolor= "#FF2D00">
-                                            <td><font size ="3", color ="#000000">Codigo</font></td>
-                                            <td><font size ="3", color ="#000000">Descripcion</font></td>
-                                            <td><font size ="3", color ="#000000">valor</font></td>
-                                           
-                                        </tr>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Codigo" type="text" name="Codigo">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="fechaRealizado" type="text" name="FechaRealizado">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="fechaLimite" type="text" name="FechaLimite">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="codigoPaquete" type="text" name="tipoPaquete_Codigo">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="telefono" type="text" name="Telefono_Cliente_Numero">
+                                    </div>
+                                    
+                                    <div class="col-sm-12">
+                                        <input type="submit" class="send" name="Guardar" value="Guardar">
+                                        <input type="submit" class="send" name="Modificar" value="Modificar">
                                         
-                                        <?php
-                                            $sql = "SELECT * FROM pedido where estado='espera'";
-                                            $resultado = mysqli_query($conexion, $sql);
-
-                                        while($mostrar=mysqli_fetch_array($resultado)){
-                                            ?>
-                                        <tr>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['codigo'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_apellido'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['telefono'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['email'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['descripcion'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_producto'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['estado'] ?></font></td>
-                                        </tr>
-                                        <?php 
-                                        }
-                                        ?>
-                                    </table>
+                                    </div>
+                                    </div>
                                 </div>
-                                
+                            </form>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 width">
+                        <div class="address">
+                            <h3>Eliminar Pedido</h3>
+                            <form action="validarPaquete.php" method="post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="codigo del paquete" type="text" name="Codigo">
+                                    </div>                                   
+                                    <div class="col-sm-12">
+                                        <input type="submit" class="send" name="eliminar" value="Eliminar">                                       
+                                    </div>
+                                </div>
+                            </form>
+                        </div>                     
+                    <div class="col-lg-6 col-md-6 col-sm-12 width"></div>
+                        <div class="address">
+                            <h3>Buscar Pedido</h3>
+                            <form action="validarPaquete.php" method="post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="busqueda del paquete" type="text" name="Codigo">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input type="submit" class="send" name="buscar" value="BuscarPedido">
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
-                    
-                </div>
-                <br>
-                <br>
-                <footr>
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 width">
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 width">
-                <form action="validarPedido.php" method="post" >              
-                    <input class="contactus"  placeholder="Codigo del Paquete" type="text"name="codigoPedido">
-                    <br><br>
-                    <button class="send">Realizar</button>
-                   
-                </form>
-                </div>
-                </div>
-                </div>
-                </div>   
-            </div>
-
+                
             <div class="copyright">
-                <p>© 2021 Proyecto Software II <a href="https://html.design/"></a></p>
+                <p>© 2021 Proyecto Bases De Datos</p>
             </div>
         </div>
     </footr>

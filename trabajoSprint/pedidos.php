@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    $tablas1="";
+    $tablas1=$_SESSION['tabla1'];
+
+    $conexion=mysqli_connect("localhost","root","root","facilisimo");
+
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Reparatodo</title>
+    <title>Facilisimo</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -58,8 +66,8 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
-                                        <li> <a href="revision.php">Menu</a> </li>
-                                        <li> <a href="index.html">Cerrar sesion</a> </li>
+                                        <li> <a href="Empleado.php">Menu</a> </li>
+                                        <li> <a href="administrador.html">Cerrar sesion</a> </li>
 
                                     </ul>
                                 </nav>
@@ -82,24 +90,32 @@
                                 <div class="row">
                                     <table bordercolor = "#1a0494" border="1" cellpadding="10" cellspacing="10">
                                         <tr bgcolor= "#FFFFFF">
-                                            <td><font size ="3", color ="#000000">nombre</font></td>
-                                            <td><font size ="3", color ="#000000">CodigoArticulo</font></td>
-                                            <td><font size ="3", color ="#000000">Nombre</font></td>
-                                            <td><font size ="3", color ="#000000">Descripcion producto</font></td>
-                                            <td><font size ="3", color ="#000000">Valor</font></td>
-                                            <td><font size ="3", color ="#000000">Cantidad</font></td>
+                                            <td><font size ="3", color ="#000000">Numero Pedido</font></td>
+                                            <td><font size ="3", color ="#000000">estado</font></td>
+                                            <td><font size ="3", color ="#000000">Cedula</font></td>
+                                            <td><font size ="3", color ="#000000">Codigo Articulo</font></td>
                                         </tr>
-                                        
+                                        <?php
+                                            if($tablas1){
+                                            $sql = "SELECT * FROM pedidos where numeroPedido='$tablas1'";
+                                            $resultado = mysqli_query($conexion, $sql);
+                                            }else{
+                                            $sql = "SELECT * FROM pedidos";
+                                            $resultado = mysqli_query($conexion, $sql);
+                                            }
+
+                                        while($mostrar=mysqli_fetch_array($resultado)){
+                                            ?>
                                         
                                         <tr>
-                                            <td><font size ="3", color ="#000000">looool</font></td>
-                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['nombre_apellido'] ?></font></td>
-                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['telefono'] ?></font></td>
-                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['descripcion'] ?></font></td>
-                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['nombre_producto'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['numeroPedido'] ?></font></td>
                                             <td><font size ="3", color ="#000000"><?php echo $mostrar['estado'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['cliente_cedula'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['Articulo_codigoArticulo'] ?></font></td>
                                         </tr>
-                                        
+                                        <?php 
+                                        }
+                                        ?>  
                                         
                                     </table>
                                 </div>  
@@ -119,21 +135,21 @@
                                 <div class="row">
                                     
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="codigo" type="text" name="nombreCliente">
+                                        <input class="contactus" placeholder="codigo" type="text" name="codigoPedido">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="estado" type="text" name="nombreCliente">
+                                        <input class="contactus" placeholder="estado" type="text" name="estadoPedido">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="cliente_cedula" type="text" name="apellidoCliente">
+                                        <input class="contactus" placeholder="cliente_cedula" type="text" name="cedulaPedido">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Articulo_codigoArticulo" type="text" name="telefonoCliente">
+                                        <input class="contactus" placeholder="Articulo_codigoArticulo" type="text" name="articuloPedido">
                                     </div>
                                     
                                     <div class="col-sm-12">
-                                        <input type="submit" class="send" name="boton3" value="Guardar">
-                                        <input type="submit" class="send" name="boton2" value="Modificar">
+                                    <input type="submit" class="send" name="guardar" value="Guardar">
+                                    <input type="submit" class="send" name="modificar" value="Modificar">
                                         
                                     </div>
                                     </div>
@@ -146,26 +162,27 @@
                             <form action="guardarPedido.php" method="post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Codigo del pedido" type="text" name="usuarioCliente">
-                                    </div>
-                                    
+                                        <input class="contactus" placeholder="Codigo del pedido" type="text" name="codigoPedido">
+                                    </div>                                   
                                     <div class="col-sm-12">
-                                        <button class="send">Eliminar</button>
-                                        
+                                        <input type="submit" class="send" name="eliminar" value="Eliminar">                                       
                                     </div>
                                 </div>
                             </form>
                         </div>                     
-                        <div class="col-lg-5 col-md-6 col-sm-12 width"></div>
-                            <div class="address">
-                                <h3>Buscar Pedido</h3>
+                    <div class="col-lg-6 col-md-6 col-sm-12 width"></div>
+                        <div class="address">
+                            <h3>Buscar Pedido</h3>
+                            <form action="guardarPedido.php" method="post">
+                                <div class="row">
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Codigo del pedido" type="text" name="contraseñaCliente">
+                                        <input class="contactus" placeholder="Codigo del pedido" type="text" name="codigoPedido">
                                     </div>
                                     <div class="col-sm-12">
-                                        <button class="send">Buscar por numero de pedido</button>                            
+                                        <input type="submit" class="send" name="buscar" value="BuscarPedido">
                                     </div>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>                

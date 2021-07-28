@@ -7,7 +7,21 @@ $email=$_POST['Contrasena'];
 session_start();
 $nm=$_SESSION['nombre'];
 $tablas=$_SESSION['tabla'];
+$tablas=$_SESSION['tabla1'];
+$tablas=$_SESSION['tabla2'];
+$tablas=$_SESSION['tabla3'];
+
+$tablas=$_SESSION['tabla4'];
+
+
 $_SESSION['tabla']="";
+$_SESSION['tabla1']="";
+$_SESSION['tabla2']="";
+$_SESSION['tabla3']="";
+$_SESSION['tabla4']="";
+
+
+
 $_SESSION['nombre']=$_POST['Usuario'];
 
 session_start();

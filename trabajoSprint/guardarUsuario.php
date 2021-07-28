@@ -32,7 +32,6 @@ $conexion=mysqli_connect("localhost","root","root","facilisimo");
 if(isset($_POST['modificar'])) $boton3=$_POST['modificar']; 
 if(isset($_POST['guardar'])) $boton2=$_POST['guardar']; 
 if(isset($_POST['eliminar'])) $boton4=$_POST['eliminar']; 
-if(isset($_POST['buscar'])) $boton5=$_POST['buscar']; 
 
 
     
@@ -43,7 +42,7 @@ if($boton2) {
     $sql= "INSERT INTO cliente(cedula,nombre,apellidos,telefono,fechaNacimiento,usuario,contrasena,numeroBancario) VALUES ('$cedulaCliente','$nombreCliente','$apellidoCliente','$telefonoCliente','$fechaNacimientoCliente','$usuarioCliente','$contrasenaCliente','$cuentaCliente')";   
 }
 if($boton4) { 
-    $sql= "Delete from cliente where cedula='$usuarioCliente' ";
+    $sql= "Delete from cliente where cedula='$cedulaCliente'";
 }
 if($boton5) { 
     $sql= "Delete from cliente where usuario='$usuarioCliente' and contrasena='$contrasenaCliente' ";

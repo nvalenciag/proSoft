@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>ReparaTodo</title>
+    <title>Facilisimo</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -65,11 +65,9 @@
                                     <ul class="menu-area-main">
 
                                         <li > <a href="ahustesCuenta.php">Ajustes de cuenta</a> </li>
-                                        <li > <a href="pedidos.html">Pedido</a> </li>
-                                        <li > <a href="recarga.html">Recargas y Datos</a> </li>
+                                        <li > <a href="pedidos.php">Pedido</a> </li>
+                                        <li > <a href="paquete.php">Paquetes de Datos</a> </li>
                                         <li > <a href="chance.php">Chances</a> </li>
-                                        <li > <a href="revision.php">Articulos</a> </li>
-                                        <li > <a href="giroEnviado.html">Giros</a> </li>
                                         <li > <a href="administrador.html">cerrar sesion</a> </li>
                                     </ul>
                                 </nav>
@@ -86,7 +84,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="blogtitlepage">
-                        <h2>Articulos</h2>
+                        <h2>Menu</h2>
                     </div>
                 </div>
             </div>
@@ -98,67 +96,62 @@
     <!-- end Lastestnews -->
 
     <!--  footer -->
-    <footr>
+    <footr id="footer_with_contact">
         <div class="footer">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-2 col-md-6 col-sm-12 width">
-                        
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-8 width">
+                <div class="row">                              
+                    <div class="col-lg-1 col-md-9 col-sm-8 width">
                         <div class="address">
                             <form>
                                 <div class="row">
                                     <table bordercolor = "#1a0494" border="1" cellpadding="10" cellspacing="10">
                                         <tr bgcolor= "#FFFFFF">
-                                            <td><font size ="3", color ="#000000"></font></td>
-                                            <td><font size ="3", color ="#000000">CodigoArticulo</font></td>
-                                            <td><font size ="3", color ="#000000">Nombre</font></td>
-                                            <td><font size ="3", color ="#000000">Descripcion producto</font></td>
-                                            <td><font size ="3", color ="#000000">Valor</font></td>
-                                            <td><font size ="3", color ="#000000">Cantidad</font></td>
+                                            <td><font size ="3", color ="#000000">Codigo</font></td>
+                                            <td><font size ="3", color ="#000000">Fecha Realizado</font></td>
+                                            <td><font size ="3", color ="#000000">Fecha Limite</font></td>
+                                            <td><font size ="3", color ="#000000">Codigo Paquete</font></td>
+                                            <td><font size ="3", color ="#000000">Telefono</font></td>
+                                           
                                         </tr>
+                                        <?php
+                                           
+                                           if($tablas3){
+                                            $sql = "SELECT * FROM paquete where codigo='$tablas3'";
+                                            $resultado = mysqli_query($conexion, $sql);
+                                            }else{
+                                            $sql = "SELECT * FROM paquete";
+                                            $resultado = mysqli_query($conexion, $sql);
+                                            }
+
+                                        while($mostrar=mysqli_fetch_array($resultado)){
+                                            ?>
+                                        
                                         <tr>
-                                            <td><font size ="3", color ="#000000"><i><img src="images/3.jpg"/></i></font></td>
-                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['nombre_apellido'] ?></font></td>
-                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['telefono'] ?></font></td>
-                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['descripcion'] ?></font></td>
-                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['nombre_producto'] ?></font></td>
-                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['estado'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['Codigo'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['FechaRealizado'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['FechaLimite'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['tipoPaquete_Codigo'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['Telefono_Cliente_Numero'] ?></font></td>
+                                         
                                         </tr>
+                                        
+                                        <?php 
+                                        }
+                                        ?>
+                                        
                                     </table>
-                                </div>
-                                
+                                </div>  
                             </form>
                         </div>
                     </div>
-                    
                 </div>
-                <br>
-                <br>
-                <footr>
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 width">
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 width">
-                <form action="validarPedido.php" method="post" >              
-                    <input type="text" class="contactus" placeholder="Codigo del producto" type="text"name="codigoPedido">
-                    <br><br>
-                    <input type="submit" class="send" name="boton3" value="Acepatar">
-                    <input type="submit" class="send" name="boton2" value="Eliminar">
-                </form>
-                </div>
-                </div>
-                </div>
-                </div>   
-            </div>
-
-            <div class="copyright">
-                <p>© 2021 Proyecto Bases de Datos <a href="https://html.design/"></a></p>
             </div>
         </div>
+        <div class="copyright">
+                <p>© 2021 Proyecto Bases De Datos</p>
+            </div>
+        </div>
+    
     </footr>
     <!-- end footer -->
     <!-- Javascript files-->

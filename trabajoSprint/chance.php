@@ -1,8 +1,10 @@
 <?php
     session_start();
+    $tablas2="";
+    $tablas2=$_SESSION['tabla2'];
     $conexion=mysqli_connect("localhost","root","root","facilisimo");
-    ?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>ReparaTodo</title>
+    <title>Facilisimo</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -53,7 +55,7 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <a href="index.html"><img src="images/LOGO_FACILISIMO.png" alt="logo" /></a>
+                                    <a href="pedidos.html"><img src="images/LOGO_FACILISIMO.png" alt="logo" /></a>
                                 </div>
                             </div>
                         </div>
@@ -63,110 +65,148 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
+                                        <li> <a href="Empleado.php">Menu</a> </li>
+                                        <li> <a href="administrador.html">Cerrar sesion</a> </li>
 
-                                        <li> <a href="revision.php">Menú</a> </li>  
-                                        <li> <a href="chance.php">Chances</a> </li>
-                                        <li> <a href="index.html">Cerrar sesion</a> </li>
-                                                                             
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             <!-- end header inner -->
     </header>
-    <!-- end header -->
-    <div class="blogbg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="blogtitlepage">
-                        <h2>Reparatodo</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!-- Lastestnews -->
-    
-    <!-- end Lastestnews -->
-
     <!--  footer -->
-    <footr>
+    <footr id="footer_with_contact">
         <div class="footer">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 width">
-                        
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 width">
+                <div class="row">                              
+                    <div class="col-lg-1 col-md-9 col-sm-8 width">
                         <div class="address">
-                            <h3>Chances</h3>
                             <form>
                                 <div class="row">
-                                    <table bordercolor = "#D32500" border="5" cellpadding="10" cellspacing="10">
-                                        <tr bgcolor= "#FF2D00">
+                                    <table bordercolor = "#1a0494" border="1" cellpadding="10" cellspacing="10">
+                                        <tr bgcolor= "#FFFFFF">
                                             <td><font size ="3", color ="#000000">Codigo</font></td>
-                                            <td><font size ="3", color ="#000000">loteria</font></td>
-                                            <td><font size ="3", color ="#000000">Premio </font></td>
-                                            <td><font size ="3", color ="#000000">Dias de juego </font></td>
-                             
+                                            <td><font size ="3", color ="#000000">Valor</font></td>
+                                            <td><font size ="3", color ="#000000">Numero</font></td>
+                                            <td><font size ="3", color ="#000000">Fecha Realizado</font></td>
+                                            <td><font size ="3", color ="#000000">Fecha Juego</font></td>
+                                            <td><font size ="3", color ="#000000">Fecha Max a Reclamar</font></td>
+                                            <td><font size ="3", color ="#000000">Codigo loteria</font></td>
                                            
                                         </tr>
-                                        
                                         <?php
-                                            $sql = "SELECT * FROM pedido where estado='espera'";
-                                            $resultado = mysqli_query($conexion, $sql);
+                                            
+                                            if($tablas2){
+                                                $sql = "SELECT * FROM chance where codigo='$tablas2'";
+                                                $resultado = mysqli_query($conexion, $sql);
+                                                }else{
+                                                $sql = "SELECT * FROM chance";
+                                                $resultado = mysqli_query($conexion, $sql);
+                                                }
 
                                         while($mostrar=mysqli_fetch_array($resultado)){
+                                        
                                             ?>
+                                        
+                                        
                                         <tr>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['codigo'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_apellido'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['telefono'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['email'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['descripcion'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['nombre_producto'] ?></font></td>
-                                            <td><font size ="3", color ="#ffffff"><?php echo $mostrar['estado'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['codigo'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['valor'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['numero'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['fechaRealizado'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['fechaJuego'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['fechaMaxima'] ?></font></td>
+                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['Loteria_codigo'] ?></font></td>
+                                         
                                         </tr>
+                                        
                                         <?php 
                                         }
                                         ?>
                                     </table>
-                                </div>
-                                
+                                </div>  
                             </form>
                         </div>
                     </div>
-                    
                 </div>
-                <br>
-                <br>
-                <footr>
+            </div>
+        </div>
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 width">
-                    </div>
+                    <div class="col-lg-6 col-md-7 col-sm-12 width">
+                        <div class="address">
+                            <h3>Chances</h3>
+                            <form action="validarChance.php" method="post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Codigo" type="text" name="Codigo">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Valor" type="text" name="Valor">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Numero" type="text" name="Numero">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="fechaRealizado" type="text" name="fechaRealizado">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="FechaJuego" type="text" name="fechaJuego">
+                                    </div>
+                                       <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Codigo de loteria" type="text" name="loteria">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Fecha Maxima a Reclamar" type="text" name="fechaMaxima">
+                                    </div>
+                                 
+                                    <div class="col-sm-12">
+                                        <input type="submit" class="send" name="Guardar" value="Guardar">
+                                        <input type="submit" class="send" name="Modificar" value="Modificar">
+                                        
+                                    </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 width">
-                <form action="validarPedido.php" method="post" >              
-                    <input class="contactus"  placeholder="Codigo de loteria" type="text"name="codigoPedido">
-                    <input class="contactus"  placeholder="Numero" type="text"name="codigoPe">
-                    <br><br>
-                    <button class="send">Realizar</button>
-                   
-                </form>
-                </div>
-                </div>
-                </div>
-                </div>   
-            </div>
-
+                        <div class="address">
+                            <h3>Eliminar Pedido</h3>
+                            <form action="validarChance.php" method="post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Codigo del pedido" type="text" name="Codigo">
+                                    </div>                                   
+                                    <div class="col-sm-12">
+                                        <input type="submit" class="send" name="eliminar" value="Eliminar">                                       
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 width"></div>
+                        <div class="address">
+                            <h3>Buscar chance</h3>
+                            <form action="validarChance.php" method="post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input class="contactus" placeholder="Codigo del chance" type="text" name="Codigo">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input type="submit" class="send" name="buscar" value="BuscarChance">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div> 
+                                    </div>
+                                    </div>
             <div class="copyright">
-                <p>© 2021 Proyecto Bases de Datos <a href="https://html.design/"></a></p>
+                <p>© 2021 Proyecto Bases De Datos</p>
             </div>
         </div>
     </footr>

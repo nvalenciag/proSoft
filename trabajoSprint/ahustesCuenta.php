@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Reparatodo</title>
+    <title>Facilisimo</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -183,7 +183,7 @@
                             <form action="guardarUsuario.php" method="post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Cedula" type="text" name="usuarioCliente">
+                                        <input class="contactus" placeholder="Cedula" type="text" name="cedulaCliente">
                                     </div>
                                     
                                     <div class="col-sm-12">
