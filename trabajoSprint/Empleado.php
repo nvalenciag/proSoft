@@ -112,8 +112,8 @@
                 <option value='5'>'Intermedia'-Lista el nombre,descripcion y la cantidad de veces que se vendio un articulo listados de menor a mayor</option>
                 <option value='6'>'Intermedia'-Lista la descripcion y el numero de veces que fue utilizado y se genera una lista de mayor a menor</option>
                 <option value='7'>'Intermedia'-Lista de cedula,nombre y numero de paquetes que ha comprado un cliente ordenado de mayor a menor</option>
-                <option value='8'>'Complejos'-</option>
-                <option value='9'>'Complejos'-</option>
+                <option value='8'>'Complejos'-Listar los clientes que han gastado mas dindero en paquetes de datos que el cliente efrain</option>
+                <option value='9'>'Complejos'-Listar el nombre del articulo y el valor de los articulos que hayan recaudado mas que los de la guerra de las galaxias</option>
                 <option value='10'>'Complejos'-</option>
 
                 
@@ -148,7 +148,7 @@
                                         <?php
                                            
                                            if($tablas4==1){
-                                            $sql = "SELECT SUM(valor) FROM chance where fechaRealizado between '1999-10-11' and '1999-11-11'";
+                                            $sql = "SELECT SUM(valor) FROM chance where fechaRealizado between '2021-06-01' and '2021-07-01'";
                                             $resultado = mysqli_query($conexion, $sql);
                                             }else{
                                             $sql = "SELECT * FROM paquete";
@@ -439,7 +439,7 @@
                                 <?php
                                    
                                    if($tablas4==5){
-                                    $sql = "SELECT Nombre,Descripcion, COUNT(CodigoArticulo)*cantidad FROM Pedidos INNER JOIN Articulos ON codigoArticulo=numeroPedido group by codigoArticulo  order by count(codigoArticulo)*cantidad desc";
+                                    $sql = "SELECT Nombre,Descripcion, COUNT(CodigoArticulo)*cantidad FROM Pedidos INNER JOIN Articulos ON codigoArticulo=Articulo_codigoArticulo group by codigoArticulo  order by count(codigoArticulo)*cantidad desc";
                                     $resultado = mysqli_query($conexion, $sql);
                                     }else{
                                     $sql = "SELECT * FROM paquete";
@@ -616,6 +616,154 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 width">
                 <div class="address">
                     <form action="reportePDF6.php" method="post">
+                        <div class="row">
+                        <td>           '</td>                       
+                           
+                            <div class="col-sm-12">
+                            <input type="submit" class="send" name="eliminar" value="GenerarPdf">                                       
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <?php 
+                                }
+                            
+                                ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+        if($tablas4==8){
+
+?>
+    <div class="container">
+
+        <div class="row">                              
+            <div class="col-lg-1 col-md-9 col-sm-8 width">
+                <div class="address">
+                    <form>
+                        <div class="row">
+                        <td>      '</td>
+
+                            <table bordercolor = "#1a0494" border="1" cellpadding="10" cellspacing="10">
+
+                                <tr bgcolor= "#FFFFFF">
+                                    <td><font size ="3", color ="#000000">Cedula</font></td>
+                                    <td><font size ="3", color ="#000000">Nombre</font></td>
+                                    <td><font size ="3", color ="#000000">Numero de compra de paquetes</font></td>
+
+                                    
+                                   
+                                </tr>
+                                
+                                <?php
+                                   
+                                   if($tablas4==8){
+                                    $sql = "SELECT cedula, nombre, SUm(valor) from cliente inner join telefono_cliente on cedula=Cliente_cedula inner join paquete on numero=Telefono_Cliente_Numero inner join tipoPaquete t on t.Codigo=tipoPaquete_Codigo group by cedula having sum(valor)>(Select SUm(valor) from cliente inner join telefono_cliente on cedula=Cliente_cedula inner join paquete on numero=Telefono_Cliente_Numero inner join tipoPaquete t on t.Codigo=tipoPaquete_Codigo  where cedula='149503030' group by cedula)";
+                                    $resultado = mysqli_query($conexion, $sql);
+                                    }else{
+                                    $sql = "SELECT * FROM paquete";
+                                    $resultado = mysqli_query($conexion, $sql);
+                                    }
+
+                                while($mostrar=mysqli_fetch_array($resultado)){
+                                    ?>
+                                
+                                <tr>
+                                    <td><font size ="3", color ="#000000"><?php echo $mostrar['cedula'] ?></font></td>
+                                    <td><font size ="3", color ="#000000"><?php echo $mostrar['nombre'] ?></font></td>
+                                    <td><font size ="3", color ="#000000"><?php echo $mostrar['SUm(valor)'] ?></font></td>
+
+                                    
+                                 
+                                </tr>
+                                
+                                <?php 
+                                }
+                            
+                                ?>
+                                
+                            </table>
+                        </div>  
+                    </form>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 width">
+                <div class="address">
+                    <form action="reportePDF7.php" method="post">
+                        <div class="row">
+                        <td>           '</td>                       
+                           
+                            <div class="col-sm-12">
+                            <input type="submit" class="send" name="eliminar" value="GenerarPdf">                                       
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <?php 
+                                }
+                            
+                                ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+        if($tablas4==9){
+
+?>
+    <div class="container">
+
+        <div class="row">                              
+            <div class="col-lg-1 col-md-9 col-sm-8 width">
+                <div class="address">
+                    <form>
+                        <div class="row">
+                        <td>      '</td>
+
+                            <table bordercolor = "#1a0494" border="1" cellpadding="10" cellspacing="10">
+
+                                <tr bgcolor= "#FFFFFF">
+                                    <td><font size ="3", color ="#000000">Nombre</font></td>
+                                    <td><font size ="3", color ="#000000">valor*COUNT(CodigoArticulo)*cantidad</font></td>
+
+                                    
+                                   
+                                </tr>
+                                
+                                <?php
+                                   
+                                   if($tablas4==9){
+                                    $sql = "SELECT Nombre, valor*COUNT(CodigoArticulo)*cantidad FROM Pedidos INNER JOIN Articulos ON codigoArticulo=articulo_codigoArticulo group by codigoArticulo  having  sum(valor)>( SELECT sum(valor) FROM Pedidos INNER JOIN Articulos ON codigoArticulo=articulo_codigoArticulo  where codigoArticulo in(6,7,8 ))";
+                                    $resultado = mysqli_query($conexion, $sql);
+                                    }else{
+                                    $sql = "SELECT * FROM paquete";
+                                    $resultado = mysqli_query($conexion, $sql);
+                                    }
+
+                                while($mostrar=mysqli_fetch_array($resultado)){
+                                    ?>
+                                
+                                <tr>
+                                    <td><font size ="3", color ="#000000"><?php echo $mostrar['Nombre'] ?></font></td>
+                                    <td><font size ="3", color ="#000000"><?php echo $mostrar['valor*COUNT(CodigoArticulo)*cantidad'] ?></font></td>
+
+                                    
+                                 
+                                </tr>
+                                
+                                <?php 
+                                }
+                            
+                                ?>
+                                
+                            </table>
+                        </div>  
+                    </form>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 width">
+                <div class="address">
+                    <form action="reportePDF8.php" method="post">
                         <div class="row">
                         <td>           '</td>                       
                            

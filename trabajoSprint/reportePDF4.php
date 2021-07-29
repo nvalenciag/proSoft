@@ -2,7 +2,7 @@
 	include 'plantilla.php';
 	require 'conexion.php';
 	
-	$query = "SELECT Nombre,Descripcion, COUNT(CodigoArticulo)*cantidad FROM Pedidos INNER JOIN Articulos ON codigoArticulo=numeroPedido group by codigoArticulo  order by count(codigoArticulo)*cantidad desc";
+	$query = "SELECT Nombre,Descripcion, COUNT(CodigoArticulo)*cantidad FROM Pedidos INNER JOIN Articulos ON codigoArticulo=Articulo_codigoArticulo group by codigoArticulo  order by count(codigoArticulo)*cantidad desc";
 	$resultado = $mysqli->query($query);
 	
 	$pdf = new PDF();

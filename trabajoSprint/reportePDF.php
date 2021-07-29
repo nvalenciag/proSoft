@@ -2,7 +2,7 @@
 	include 'plantilla.php';
 	require 'conexion.php';
 	
-	$query = "SELECT SUM(valor) FROM chance where fechaRealizado between '1999-10-11' and '1999-11-11'";
+	$query = "SELECT SUM(valor) FROM chance where fechaRealizado between '2021-06-01' and '2021-07-01'";
 	$resultado = $mysqli->query($query);
 	
 	$pdf = new PDF();
