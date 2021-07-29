@@ -4,7 +4,6 @@ include "db-conexion.php";
 $cedulaCliente=$_POST['cedulaCliente'];
 $nombreCliente=$_POST['nombreCliente'];
 $apellidoCliente=$_POST['apellidoCliente'];
-$telefonoCliente=$_POST['telefonoCliente'];
 $fechaNacimientoCliente=$_POST['fechaNCliente'];
 $usuarioCliente=$_POST['usuarioCliente'];
 $contrasenaCliente=$_POST['ContraseñaCliente'];
@@ -36,10 +35,10 @@ if(isset($_POST['eliminar'])) $boton4=$_POST['eliminar'];
 
     
 if($boton3){
-    $sql= "UPDATE cliente SET nombre='$nombreCliente',apellidos='$apellidoCliente',telefono='$telefonoCliente',fechaNacimiento='$fechaNacimientoCliente',usuario='$usuarioCliente',contrasena='$contrasenaCliente',numeroBancario='$cuentaCliente' WHERE cedula = '$cedulaCliente'";       
+    $sql= "UPDATE cliente SET nombre='$nombreCliente',apellidos='$apellidoCliente',fechaNacimiento='$fechaNacimientoCliente',usuario='$usuarioCliente',contrasena='$contrasenaCliente',numeroBancario='$cuentaCliente' WHERE cedula = '$cedulaCliente'";       
 }  
 if($boton2) { 
-    $sql= "INSERT INTO cliente(cedula,nombre,apellidos,telefono,fechaNacimiento,usuario,contrasena,numeroBancario) VALUES ('$cedulaCliente','$nombreCliente','$apellidoCliente','$telefonoCliente','$fechaNacimientoCliente','$usuarioCliente','$contrasenaCliente','$cuentaCliente')";   
+    $sql= "INSERT INTO cliente(cedula,nombre,apellidos,fechaNacimiento,usuario,contrasena,numeroBancario) VALUES ('$cedulaCliente','$nombreCliente','$apellidoCliente','$fechaNacimientoCliente','$usuarioCliente','$contrasenaCliente','$cuentaCliente')";   
 }
 if($boton4) { 
     $sql= "Delete from cliente where cedula='$cedulaCliente'";

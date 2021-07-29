@@ -93,7 +93,6 @@
                                             <td><font size ="3", color ="#000000">Cedula</font></td>
                                             <td><font size ="3", color ="#000000">Nombre</font></td>
                                             <td><font size ="3", color ="#000000">Apellidos</font></td>
-                                            <td><font size ="3", color ="#000000">Telefono</font></td>
                                             <td><font size ="3", color ="#000000">FechaNacimiento</font></td>
                                             <td><font size ="3", color ="#000000">Usuario</font></td>
                                             <td><font size ="3", color ="#000000">contraseña</font></td>
@@ -113,11 +112,10 @@
                                         while($mostrar=mysqli_fetch_array($resultado)){
                                             ?>
 
-                                        <tr>
+                                        <tr bgcolor= "#FFFFFF">
                                             <td><font size ="3", color ="#000000"><?php echo $mostrar['cedula'] ?></font></td>
                                             <td><font size ="3", color ="#000000"><?php echo $mostrar['nombre'] ?></font></td>
                                             <td><font size ="3", color ="#000000"><?php echo $mostrar['apellidos'] ?></font></td>
-                                            <td><font size ="3", color ="#000000"><?php echo $mostrar['telefono'] ?></font></td>
                                             <td><font size ="3", color ="#000000"><?php echo $mostrar['fechaNacimiento'] ?></font></td>
                                             <td><font size ="3", color ="#000000"><?php echo $mostrar['usuario'] ?></font></td>
                                             <td><font size ="3", color ="#000000"><?php echo $mostrar['contrasena'] ?></font></td>
@@ -153,9 +151,7 @@
                                     <div class="col-sm-12">
                                         <input class="contactus" placeholder="Apellidos" type="text" name="apellidoCliente">
                                     </div>
-                                    <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Telefono" type="text" name="telefonoCliente">
-                                    </div>
+                                    
                                     <div class="col-sm-12">
                                         <input class="contactus" placeholder="Fecha nacimiento: año-mes-dia" type="text" name="fechaNCliente">
                                     </div>

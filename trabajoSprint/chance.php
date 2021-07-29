@@ -67,7 +67,6 @@
                                     <ul class="menu-area-main">
                                         <li> <a href="Empleado.php">Menu</a> </li>
                                         <li> <a href="administrador.html">Cerrar sesion</a> </li>
-
                                     </ul>
                                 </nav>
                             </div>

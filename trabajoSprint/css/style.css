@@ -1763,7 +1763,8 @@
      margin-bottom: 25px;
 }
  .footer {
-     background: #ffffff;
+     
+     background-image: url(../images/LOGO_FACILISIMO.png);
      padding-top: 90px;
 }
  .footer .address h3 {
